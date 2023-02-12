@@ -7,6 +7,6 @@ Página web de los sitios turísticos de Gran Canaria, te permite saber que luga
 * Bases de datos: Firebase.
 
 # Autores
-Marco Nehuen Hernández Abba
-David Sosa Santana
-Victoria Desirèe Marcè Acosta
+Marco Nehuen Hernández Abba  
+David Sosa Santana  
+Victoria Desirèe Marcè Acosta  
