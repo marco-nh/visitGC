@@ -1,0 +1,102 @@
+
+.content{
+    width: 100%;
+    height: 85%;
+    /*background-color: yellow;*/
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    padding: 5px;
+}
+
+aside{
+    
+    /*background-color: aqua;*/
+    width: 95%;
+    height: 98%;
+    margin: auto;
+    padding: 10px;
+}
+
+.map{
+    background-color: grey;
+    border: 3px solid rgba(0,0,0,1);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.secccionizquierda{
+    float: left;
+    padding: 5px;
+    width: 25%;
+}
+.seccioncentro{
+    float: center;
+    padding: 5px;
+    width: 50%;
+}
+.seccionderecha{
+    float: right;
+    padding: 5px;
+    width: 25%;
+    /*background-color: bisque;*/
+ 
+}
+
+li{
+    list-style: none;
+    padding: auto;
+    margin: auto;
+}
+
+ul li:hover{
+    color:blue;
+}
+
+.genero{
+    background-color: grey;
+    border: 3px solid rgba(0,0,0,1);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista{
+    /*background-color: green;*/
+    width: 24%;
+    height: auto;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.reseñas{
+    /*background-color: gold;*/
+    width: 100%;
+    position: relative;
+    top: 45%;
+    height: 53%;
+    text-align: center;
+
+}
+
+.cuadroReseña{
+    background-color: grey;
+    border: 3px solid rgba(0,0,0,1);
+    width: 100%;
+    height: 85%;
+
+}
+
+footer{
+    clear: both;
+    position: relative;
+    bottom: 0;
+    margin-top: -200px;
+}

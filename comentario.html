@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="This is an HTML5 example">
+  <meta name="keywords" content="HTML5, CSS3, JavaScript">
+  <title>This text is the title of the document</title>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+  <link rel="stylesheet" href="comentario.css">
+</head>
+<body>
+<div id="wrapper">
+
+
+
+  <header id="main_header" w3-include-html="headerVisitGC.html">
+    <!--<h1>This is the main title of the website</h1>-->
+  </header>
+
+
+    <div class="texto">
+      <h1>Comentar sobre el lugar</h1>
+    </div>
+  <div class="container">
+    <div class="correoelectronico">
+      <h2>Correo Electronico</h2>
+      <input type="text" id="correo" name="correo" required
+             minlength="20" maxlength="30" size="35">
+    </div>
+    <div class="relleno">
+    </div>
+    <div class="nombre">
+      <h2>Nombre</h2>
+      <input type="text" id="nombre" name="nombre"
+             minlength="20" maxlength="30" size="35">
+    </div>
+    <div class="contenido">
+      <h2>Contenido</h2>
+      <textarea name="textarea" rows="8" cols="100">Contenido</textarea>
+    </div>
+  </div>
+    <div class="enviar">
+      <input type="button" value="Enviar">
+    </div>
+
+
+  <footer id="main_footer" w3-include-html="footer.html">
+
+    <!--
+    Copyright &copy; 2014
+    -->
+  </footer>
+
+</div>
+
+<script>
+
+    w3IncludeHTML();
+
+</script>
+
+
+</body>
+</html>
