@@ -1,10 +1,7 @@
-
-
-
-#wrapper {
-    width: 95%;
-    margin: 5px auto;
+body{
+    margin: 0px;
 }
+
 
 .planea {
     vertical-align: top;
@@ -55,7 +52,7 @@
 }
 .lugaresBloque1{
     height:500px;
-    width:40%;
+    width:38%;
     overflow: auto;
     float:left;
 

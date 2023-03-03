@@ -1,7 +1,5 @@
-
-#wrapper {
-    width: 95%;
-    margin: 5px auto;
+body{
+    margin: 0px;
 }
 
 
@@ -12,17 +10,19 @@
 }
 
 .texto {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    margin-left: 3%;
 }
 .correoelectronico{
-    margin-bottom: 30px
+    margin-bottom: 30px;
 }
 .nombre{
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 .enviar {
-    margin-bottom: 20px
+    margin-bottom: 200px;
+    text-align: center;
 }
 .container h2 {
     vertical-align: top;
