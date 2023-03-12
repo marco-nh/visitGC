@@ -5,15 +5,23 @@ body{
 
 .planea {
     vertical-align: top;
-    width: 300px;
+    grid-area: planea;
 }
 
 .containerViaje{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
+    grid-template-areas:
+    "planea planea planea"
+    "municipio municipio municipio"
+    "visitalugar visitalugar visitalugar"
+    "lugaresbloque1 lugaresbloque2 lugaresbloque2"
+    ;
     margin: 0px 0px 0px 10%;
     text-align: left;
 }
 .municipio h2{
-    margin-top: 30px;
     margin-right: 100px;
     text-align: left;
     display: inline-block;
@@ -23,9 +31,11 @@ body{
 }
 .municipio{
     margin-left: 30px;
+    grid-area: municipio;
 }
 .visitaLugar{
     margin-top: 70px;
+    grid-area: visitalugar;
 }
 .bloqueL{
     background-color: #999999;
@@ -52,16 +62,14 @@ body{
 }
 .lugaresBloque1{
     height:500px;
-    width:38%;
+    width:60%;
     overflow: auto;
-    float:left;
-
+    grid-area: lugaresbloque1;
 }
 .lugaresBloque2{
     height:500px;
-    width:50%;
-    display:inline-block;
-    margin-left: 50px;
+    width:100%;
+    grid-area: lugaresbloque2;
 }
 .bloque2{
     background-color: #999999;
@@ -73,4 +81,48 @@ body{
 
 .containerViaje{
     margin-bottom: 80px;
+}
+
+/* movil (tamaño pequeño)*/
+@media only screen and (max-width: 720px) {
+    .containerViaje{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
+        grid-template-areas:
+        "planea"
+        "municipio"
+        "visitalugar"
+        "lugaresbloque1"
+        "lugaresbloque2"
+    ;
+        margin: 0px 0px 0px 10%;
+        text-align: left;
+    }
+    .lugaresBloque1{
+        height:500px;
+        width:100%;
+        overflow: auto;
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr ;
+        grid-auto-flow: row;
+        justify-content: center;
+    }
+    .lugar1 h2{
+        display: block;
+    }
+    .lugar2 h2{
+        display: block;
+    }
+    .lugar3 h2{
+        display: block;
+    }
+    .lugar4 h2{
+        display: block;
+    }
+    .bloqueL{
+        height: 300px;
+        width: 80%;
+    }
 }
