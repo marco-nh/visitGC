@@ -15,6 +15,7 @@ body{
 }
 .correoelectronico{
     margin-bottom: 30px;
+    align-content: center;
 }
 .nombre{
     margin-bottom: 20px;
@@ -25,10 +26,12 @@ body{
     text-align: center;
 }
 .container h2 {
-    vertical-align: top;
     text-align: left;
     display: inline-block;
     width: 300px;
+}
+.contenido h2 {
+    vertical-align: top;
 }
 .enviar input {
     width: 170px;

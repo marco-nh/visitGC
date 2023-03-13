@@ -38,14 +38,18 @@ ul{
 }
 li{
     list-style: none;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-gap: 20px 20px;
     padding: 10px;
     margin: 40px;
 }
 .resultado{
     background-color: grey;
     border: 3px solid rgba(0,0,0,1);
-    width: 7%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 50px;
     justify-content: center;
     align-items: center;
     margin: auto;
