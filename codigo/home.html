@@ -10,41 +10,48 @@
     <link rel="stylesheet" href="homeCss.css">
 </head>
 <body>
+
 <div id="wrapper">
+
     <header id="main_header" w3-include-html="headerVisitGC.html">
-        <!--<h1>This is the main title of the website</h1>-->
     </header>
 
-    <a id="containerHome">
-        <div class="descripcionHome">
-            <div><h2>Lugar</h2></div>
-            <p>El sitio marcado se basa en una localizacion muy conocida</p>
-            <div><a href="lugar.html"><p>Leer mas...</p></a></div>
-        </div>
-        <div id="mapaHome">
+    <div id="containerHome">
+
+        <section id="descripcionHome">
+            <a href="lugar.html"><h2>Lugar</h2></a>
+            <a href="lugar.html"><p>El sitio marcado se basa en una localizacion muy conocida</p></a>
+            <a href="lugar.html"><p>Leer mas...</p></a>
+        </section>
+
+        <section id="mapaHome">
             <div><p>Mapa</p></div>
-        </div>
-        <div id="asideHome">
+        </section>
+
+
+        <nav id="asideHome">
             <ul class="listaGenero">
                 <li class="genero"><a href="#">Playas</a></li>
-				<li class="genero"><a href="#">Rural</a></li>
-				<li class="genero"><a href="#">Histórico</a></li>
-				<li class="genero"><a href="#">Ocio</a></li>
-				<li class="genero"><a href="#">Gastronómico</a></li>
+                <li class="genero"><a href="#">Rural</a></li>
+                <li class="genero"><a href="#">Histórico</a></li>
+                <li class="genero"><a href="#">Ocio</a></li>
+                <li class="genero"><a href="#">Gastronómico</a></li>
             </ul>
-            <div class="reseñas">
-                <h2>Ultimas reseñas</h2>
-                <ul class="listaComentarios">
-                    <lu><div class="comentario"><p>1º</p></div></lu>
-                    <lu><div class="comentario"><p>2º</p></div></lu>
-                    <lu><div class="comentario"><p>3º</p></div></lu>
-                </ul>
-            </div>
-        </div>
-    </a>
+        </nav>
+
+        <section class="comentarios">
+            <h2>Últimas reseñas</h2>
+            <ul class="listaComentarios">
+                <lu><div class="comentario"><p>1º</p></div></lu>
+                <lu><div class="comentario"><p>2º</p></div></lu>
+                <lu><div class="comentario"><p>3º</p></div></lu>
+            </ul>
+        </section>
+
+
+    </div>
 
     <footer id="main_footer" w3-include-html="footer.html">
-
         <!--
         Copyright &copy; 2014
         -->
