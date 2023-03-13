@@ -1,61 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="This is an HTML5 example">
-  <meta name="keywords" content="HTML5, CSS3, JavaScript">
-  <title>VisitGC</title>
-  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <meta charset="utf-8">
+    <meta name="description" content="This is an HTML5 example">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <title>VisitGC</title>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
-  <link rel="stylesheet" href="stylesHome.css">
+    <link rel="stylesheet" href="homeCss.css">
 </head>
 <body>
 <div id="wrapper">
-  <header id="main_header" w3-include-html="headerVisitGC.html">
-    <!--<h1>This is the main title of the website</h1>-->
-  </header>
+    <header id="main_header" w3-include-html="headerVisitGC.html">
+        <!--<h1>This is the main title of the website</h1>-->
+    </header>
 
-  <div class="containerHome">
-      <div class="descripcionHome">
-        <div class="bloqueL"><p>Pequeña descripcion del sitio</p></div>
-        <h2>el sitio marcado se basa en una localizacion muy conocida</h2>
-        <div class="link"><a href="lugar.html"><h2>Leer mas...</h2></a></div>
-      </div>
-      <div class="mapaHome">
-        <div class="bloqueL2"><p>Mapa</p></div>
-      </div>
-     <div class="generoHome">
-       <ul class="lista">
-         <li><div class="genero"><p>Genero</p></div></li>
-         <li><div class="genero"><p>Genero</p></div></li>
-         <li><div class="genero"><p>Genero</p></div></li>
-         <li><div class="genero"><p>Genero</p></div></li>
-         <li><div class="genero"><p>Genero</p></div></li>
-         <li><div class="genero"><p>Genero</p></div></li>
-       </ul>
-       <div class="reseñas">
-         <h1>Ultimas reseñas</h1>
-         <ul class="listareseñas">
-           <li><div class="genero"><p>1º</p></div></li>
-           <li><div class="genero"><p>2º</p></div></li>
-           <li><div class="genero"><p>3º</p></div></li>
-         </ul>
-       </div>
-     </div>
-  </div>
+    <a id="containerHome">
+        <div class="descripcionHome">
+            <div><h2>Lugar</h2></div>
+            <p>El sitio marcado se basa en una localizacion muy conocida</p>
+            <div><a href="lugar.html"><p>Leer mas...</p></a></div>
+        </div>
+        <div id="mapaHome">
+            <div><p>Mapa</p></div>
+        </div>
+        <div id="asideHome">
+            <ul class="listaGenero">
+                <li class="genero"><a href="#">Playas</a></li>
+				<li class="genero"><a href="#">Rural</a></li>
+				<li class="genero"><a href="#">Histórico</a></li>
+				<li class="genero"><a href="#">Ocio</a></li>
+				<li class="genero"><a href="#">Gastronómico</a></li>
+            </ul>
+            <div class="reseñas">
+                <h2>Ultimas reseñas</h2>
+                <ul class="listaComentarios">
+                    <lu><div class="comentario"><p>1º</p></div></lu>
+                    <lu><div class="comentario"><p>2º</p></div></lu>
+                    <lu><div class="comentario"><p>3º</p></div></lu>
+                </ul>
+            </div>
+        </div>
+    </a>
 
-  <footer id="main_footer" w3-include-html="footer.html">
+    <footer id="main_footer" w3-include-html="footer.html">
 
-    <!--
-    Copyright &copy; 2014
-    -->
-  </footer>
+        <!--
+        Copyright &copy; 2014
+        -->
+    </footer>
 
 </div>
 
 <script>
 
-  w3IncludeHTML();
+    w3IncludeHTML();
 
 </script>
 
