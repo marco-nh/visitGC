@@ -1,94 +1,53 @@
-.content{
-    width: 100%;
-    height: 85%;
-    /*background-color: yellow;*/
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    padding: 5px;
+body{
 }
 
-aside{
-    
-    /*background-color: aqua;*/
-    width: 95%;
-    height: 98%;
-    margin: auto;
-    padding: 10px;
+
+#containerHome{
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 90% 10%;
+	gap: 0.5rem;
+	padding: 1em;
+	margin: 1em;
+	border: 1em;
+	grid-template-areas:
+		"descripcionHome mapaHome listaGenero"
+		". . comentarios"
+	;
 }
 
-.map{
-    background-color: grey;
-    border: 3px solid rgba(0,0,0,1);
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-   
+#descripcionHome a:link{
+	text-decoration: none;
+	text-decoration-color: black;
 }
 
-.secccionizquierda{
-    float: left;
-    padding: 5px;
-    width: 25%;
-}
-.seccioncentro{
-    float: center;
-    padding: 5px;
-    width: 50%;
-}
-.seccionderecha{
-    float: right;
-    padding: 5px;
-    width: 25%;
-    /*background-color: bisque;*/
- 
+#mapaHome{
+	background-color: #6c757d;
+	justify-items: center;
 }
 
-li{
-    list-style: none;
-    padding: auto;
-    margin: auto;
-}
-
-ul li:hover{
-    color:blue;
-}
-
-.genero{
-    background-color: grey;
-    border: 3px solid rgba(0,0,0,1);
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.lista{
-    /*background-color: green;*/
-    width: 24%;
-    height: auto;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-}
-
-.reseñas{
-    /*background-color: gold;*/
-    width: 100%;
-    position: relative;
-    top: 45%;
-    height: 53%;
-    text-align: center;
+#asideHome{
 
 }
 
-.cuadroReseña{
-    background-color: grey;
-    border: 3px solid rgba(0,0,0,1);
-    width: 100%;
-    height: 85%;
+.listaGenero{
+	list-style: none;
+}
 
+.genero a:link{
+	text-decoration: none;			/*quita el subrayado*/
+	padding: 10px;					/*TODO hacer RWD*/
+	border-radius: 25px;			/*round edges*/
+	border-bottom-width: 0.1rem;
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+	font-size: 1.5rem;
+	display: block;
+
+	background-color: #a8aeff;
+	color: black;
+}
+
+.genero a:hover{
+	background-color: #6972f7;
 }
