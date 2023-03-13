@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="This is an HTML5 example">
+  <meta name="keywords" content="HTML5, CSS3, JavaScript">
+  <title>VisitGC</title>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+  <link rel="stylesheet" href="../CSS/stylesRegistro.css">
+  <link rel="stylesheet" href="../CSS/stylesHome.css">
+</head>
+<body>
+<div id="wrapper">
+  <header id="main_header" w3-include-html="headerVisitGC.html">
+    <!--<h1>This is the main title of the website</h1>-->
+  </header>
+
+  <main class="parent">
+    <section id="formularioRegistro" class="child">
+      <h1>Registro</h1>
+      <form id="formularioRegistro">
+        <label for="emailLogin">Correo electrónico:</label>
+        <input type="email" id="email" name="email"><br>
+      
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name"><br>
+      
+        <label for="passwordRegistro">Contraseña:</label>
+        <input type="password" id="password" name="password"><br>
+      
+        <label for="confirm-password">Repetir contraseña:</label>
+        <input type="password" id="confirm-password" name="confirm-password"><br>
+      
+        <label for="language">Idioma:</label>
+        <select id="language" name="language">
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+          <option value="fr">Francés</option>
+          <option value="de">Alemán</option>
+        </select><br>
+      
+        <input type="submit" value="Registrar">
+      </form>
+    </section>
+    <section id="formularioLogin" class="child">
+      <h1>Login</h1>
+      <form>
+        <label for="emailLogin">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="passwordLogin">Contraseña:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Iniciar sesión">
+      </form>
+    </section>
+  </main>
+
+  <footer id="main_footer" w3-include-html="footer.html">
+
+    <!--
+    Copyright &copy; 2014
+    -->
+  </footer>
+
+</div>
+
+<script>
+
+  w3IncludeHTML();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+}
+
+
+.container {
+    text-align: left;
+    margin-bottom: 100px;
+    margin: 0px 130px 100px 130px;
+}
+
+.texto {
+    margin-bottom: 30px;
+    margin-left: 3%;
+}
+.correoelectronico{
+    margin-bottom: 30px;
+}
+.nombre{
+    margin-bottom: 20px;
+}
+
+.enviar {
+    margin-bottom: 200px;
+    text-align: center;
+}
+.container h2 {
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    width: 300px;
+}
+.enviar input {
+    width: 170px;
+    height: 50px;
+}

@@ -1,0 +1,74 @@
+body{
+    margin:0px;
+}
+.seccion1{
+    width: 100%;
+    height: 300px;
+}
+
+.seccion2{
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 50px;
+}
+.informacion1{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width:33%;
+    height:300px;
+    float: left;
+}
+.mapa{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width:50%;
+    height:300px;
+    float: right;
+}
+.foto{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width:33%;
+    height:300px;
+    float: left;
+}
+.informacion2{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width:50%;
+    height:300px;
+    float: right;
+}
+.comentarios{
+    height:500px;
+
+}
+.cajaComentarios{
+    height:80%;
+    width:90%;
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+
+}
+.cajaComentarios h2{
+    margin-left: 1%;
+    text-align: left;
+    display: inline-block;
+}
+.cajaComentariosFondo{
+    height:80%;
+    width:95%;
+    margin-left: 1%;
+    background-color: white;
+    border: 3px solid rgba(0,0,0,1);
+}
+.enviar{
+    display: inline-block;
+    margin-left: 3%;
+}
+.content{
+    margin-bottom: 29px;
+    margin-left: 5px;
+    margin: 15px 15px 30px 15px;
+}

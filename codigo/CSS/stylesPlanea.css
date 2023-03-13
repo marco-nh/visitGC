@@ -1,0 +1,76 @@
+body{
+    margin: 0px;
+}
+
+
+.planea {
+    vertical-align: top;
+    width: 300px;
+}
+
+.containerViaje{
+    margin: 0px 0px 0px 10%;
+    text-align: left;
+}
+.municipio h2{
+    margin-top: 30px;
+    margin-right: 100px;
+    text-align: left;
+    display: inline-block;
+}
+.municipio select{
+    width: 500px;
+}
+.municipio{
+    margin-left: 30px;
+}
+.visitaLugar{
+    margin-top: 70px;
+}
+.bloqueL{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    display: inline-block;
+    vertical-align: 40px;
+}
+
+.lugar1 h2{
+    display: inline-block;
+
+}
+.lugar2 h2{
+    display: inline-block;
+}
+.lugar3 h2{
+    display: inline-block;
+}
+.lugar4 h2{
+    display: inline-block;
+}
+.lugaresBloque1{
+    height:500px;
+    width:38%;
+    overflow: auto;
+    float:left;
+
+}
+.lugaresBloque2{
+    height:500px;
+    width:50%;
+    display:inline-block;
+    margin-left: 50px;
+}
+.bloque2{
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width: 90%;
+    height: 90%;
+    margin-top: 20px;
+}
+
+.containerViaje{
+    margin-bottom: 80px;
+}
