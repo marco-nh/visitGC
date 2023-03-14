@@ -8,24 +8,16 @@ body{
     display: grid;
     flex-wrap: wrap;
     padding: 5px;
-    text-align: center;
-
 }
 
 .cabeceraBusqueda{
-    /*background-color: aqua;*/
-    height: 60%;
-    
+    display:grid;
 }
 
-h2{
-    display: inline-block;
-    width: 50%;
-}
 
 .cabeceraBusqueda input{
-    display: inline-block;
     width: 45%;
+    height: 50%;
 }
 
 .resultado{
@@ -36,20 +28,13 @@ h2{
 ul{
     float: left;
 }
-li{
-    list-style: none;
-    display: grid;
-    grid-template-columns: 0.2fr 1fr;
-    grid-gap: 20px 20px;
-    padding: 10px;
-    margin: 40px;
-}
+
 .resultado{
     background-color: grey;
     border: 3px solid rgba(0,0,0,1);
     max-width: 100%;
     height: auto;
-    padding: 50px;
+
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -63,7 +48,50 @@ p{
 
 .nombreLugar{
     display: inline-block;
-    width: 80%;
     /*background-color: cadetblue;*/
     text-align: left;
+}
+@media only screen and (min-width: 667px) {
+    li{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr;
+        grid-gap: 20px 20px;
+        padding: 10px;
+        margin: 40px;
+        align-items: center;
+    }
+    .resultado{
+        padding: 50px;
+    }
+    .cabeceraBusqueda{
+        /*background-color: aqua;*/
+        height: 60%;
+        grid-template-columns: 0.3fr 0.7fr;
+        align-items: center;
+    }
+    .cabeceraBusqueda h2{
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 667px) {
+    li{
+        display: grid;
+        list-style: none;
+        grid-auto-flow: column;
+        grid-template-rows: 3fr 1fr;
+    }
+    .nombreLugar{
+        justify-self: center;
+    }
+    .resultado{
+        padding: 150px;
+    }
+    .cabeceraBusqueda{
+        /*background-color: aqua;*/
+        height: 60%;
+        grid-template-rows: 0.3fr 0.7fr;
+        align-items: center;
+        justify-items: center;
+    }
 }
