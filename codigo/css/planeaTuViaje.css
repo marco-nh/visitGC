@@ -10,14 +10,15 @@ body{
 
 .containerViaje{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(300px, 1fr) 1fr;
     grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
     grid-template-areas:
-    "planea planea planea"
-    "municipio municipio municipio"
-    "visitalugar visitalugar visitalugar"
-    "lugaresbloque1 lugaresbloque2 lugaresbloque2"
-    ;
+    "planea  ."
+    "municipio ."
+    "visitalugar ."
+    "lugaresbloque1 lugaresbloque2"
+;
+    grid-gap: 20px 50px;
     margin: 0px 0px 0px 10%;
     text-align: left;
 }
@@ -27,11 +28,13 @@ body{
     display: inline-block;
 }
 .municipio select{
-    width: 500px;
+    height: 30px;
+    width: 200px;
 }
 .municipio{
-    margin-left: 30px;
     grid-area: municipio;
+    display:grid;
+    align-items: center;
 }
 .visitaLugar{
     margin-top: 70px;
@@ -45,24 +48,27 @@ body{
     margin-top: 50px;
     display: inline-block;
     vertical-align: 40px;
+    grid-area: foto;
 }
 
 .lugar1 h2{
-    display: inline-block;
+    grid-area:lugar;
+    align-self: end;
+}
 
-}
-.lugar2 h2{
-    display: inline-block;
-}
-.lugar3 h2{
-    display: inline-block;
-}
-.lugar4 h2{
-    display: inline-block;
+.lugar1{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas:
+    "foto ."
+    "foto lugar"
+;
+    grid-gap: 0px 20px;
+    align-items: end;
 }
 .lugaresBloque1{
     height:500px;
-    width:60%;
     overflow: auto;
     grid-area: lugaresbloque1;
 }
@@ -82,22 +88,65 @@ body{
 .containerViaje{
     margin-bottom: 80px;
 }
+/* ordenador (tamaño grande)*/
+@media only screen and (min-width: 1440px) {
+    .municipio{
+        display:grid;
+        grid-template-columns: 0.2fr 0.8fr;
+        align-items: center;
+    }
+}
 
+/* tablet (tamaño medio)*/
+@media only screen and (min-width: 720px) and (max-width:1440px){
+    .municipio{
+        display:grid;
+        grid-template-columns: 0.2fr 0.8fr;
+        align-items: center;
+    }
+    .lugar1{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+                "foto"
+                "lugar";
+        justify-items: center;
+    }
+    .bloqueL{
+        height: 200px;
+        width: 200px;
+    }
+}
 /* movil (tamaño pequeño)*/
 @media only screen and (max-width: 720px) {
+    .bloqueL{
+        height: 200px;
+        width: 200px;
+    }
+    .municipio h2{
+        display: none;
+    }
+    .municipio{
+        display:grid;
+        grid-template-rows: 0.2fr 0.8fr;
+        align-items: center;
+        grid-gap: 22px 20px;
+    }
     .containerViaje{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 1fr;
         grid-template-areas:
         "planea"
         "municipio"
+        "lugaresbloque2"
         "visitalugar"
         "lugaresbloque1"
-        "lugaresbloque2"
     ;
         margin: 0px 0px 0px 10%;
         text-align: left;
+        margin-bottom: 20px;
+        justify-items: center;
     }
     .lugaresBloque1{
         height:500px;
@@ -111,18 +160,5 @@ body{
     }
     .lugar1 h2{
         display: block;
-    }
-    .lugar2 h2{
-        display: block;
-    }
-    .lugar3 h2{
-        display: block;
-    }
-    .lugar4 h2{
-        display: block;
-    }
-    .bloqueL{
-        height: 300px;
-        width: 80%;
     }
 }

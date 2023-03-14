@@ -8,24 +8,17 @@ body{
     display: grid;
     flex-wrap: wrap;
     padding: 5px;
-    text-align: center;
-
 }
 
 .cabeceraBusqueda{
-    /*background-color: aqua;*/
-    height: 60%;
-    
+    display:grid;
+    margin-left: 50px;
 }
 
-h2{
-    display: inline-block;
-    width: 50%;
-}
 
 .cabeceraBusqueda input{
-    display: inline-block;
-    width: 45%;
+    width: 200px;
+    height: 20px;
 }
 
 .resultado{
@@ -36,21 +29,15 @@ h2{
 ul{
     float: left;
 }
-li{
-    list-style: none;
-    padding: 10px;
-    margin: 40px;
-}
+
 .resultado{
     background-color: grey;
     border: 3px solid rgba(0,0,0,1);
-    width: 7%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    height: auto;
     margin: auto;
     float: left;
-
+    grid-area: imagen;
 }
 
 p{
@@ -59,7 +46,64 @@ p{
 
 .nombreLugar{
     display: inline-block;
-    width: 80%;
     /*background-color: cadetblue;*/
     text-align: left;
+    grid-area:lugar;
+}
+@media only screen and (min-width: 667px) {
+    li{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr;
+        grid-gap: 20px 20px;
+        grid-template-areas:
+            "imagen ."
+            "imagen lugar";
+        padding: 10px;
+        margin: 40px;
+        align-items: center;
+    }
+    .resultado{
+        padding: 50px;
+    }
+    .cabeceraBusqueda{
+        /*background-color: aqua;*/
+        grid-template-columns: 350px 1fr;
+        align-items: center;
+    }
+    .cabeceraBusqueda h2{
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 667px) {
+    li{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr;
+        grid-gap: 20px 20px;
+        grid-template-areas:
+            "imagen ."
+            "imagen lugar";
+        padding: 10px;
+        margin: 40px;
+        align-items: center;
+    }
+    .resultado{
+        padding: 50px;
+        align-self: end;
+    }
+    .cabeceraBusqueda{
+        /*background-color: aqua;*/
+        grid-template-rows: 0.5fr auto;
+        align-items: center;
+        justify-items: center;
+    }
+    .resultado{
+        background-color: grey;
+        border: 3px solid rgba(0,0,0,1);
+        max-width: 100%;
+        height: auto;
+        align-self: end;
+        margin: auto;
+    }
 }
