@@ -1,0 +1,63 @@
+body{
+}
+
+p{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+#containerHome{
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 30rem;
+	grid-template-areas:
+			"descripcionHome mapaHome listaGenero"
+			"comentarios";
+	gap: 0.5rem;
+	padding: 1em;
+	margin: 1em;
+	border: 1em;
+
+}
+
+#descripcionHome a:link, a:hover{
+	text-decoration: none;
+	text-decoration-color: black;
+}
+
+#mapaHome{
+	background-color: #6c757d;
+}
+
+
+.listaGenero{
+	list-style: none;
+}
+
+.genero a:link{
+	text-decoration: none;			/*quita el subrayado*/
+	padding: 10px;					/*TODO hacer RWD*/
+	border-radius: 25px;			/*round edges*/
+	border-bottom-width: 0.1rem;
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+	font-size: 1.5rem;
+	display: block;
+	background-color: #a8aeff;
+	color: black;
+}
+
+.genero a:hover{
+	background-color: #6972f7;
+}
+
+#comentarios{
+	grid-column: 1/4;
+}
+
+.comentario{
+	display: flex;
+}

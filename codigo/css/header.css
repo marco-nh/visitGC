@@ -1,0 +1,183 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    background-color: aqua;
+
+}
+
+.header-section-1{
+    display: grid;
+    grid-template-areas:
+            "casita SignUpLogIn"
+            "cajaIdiomas cajaIdiomas";
+    align-items: center;
+}
+
+
+#casita{
+    justify-self: center;
+}
+
+#SignUpLogIn{
+    font-size: 1.5rem;
+}
+
+#cajaIdiomas{
+    display: inline-flex;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2;
+    grid-area: cajaIdiomas;
+}
+
+.idioma{
+    padding: 2%;
+    margin: 2%;
+    display: flow-root;
+}
+
+.header-section-2{
+    background-color: #6c757d;
+    text-align: center;
+}
+
+.header-section-3{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    text-align: center;
+}
+
+
+#planeaTuViaje{
+    font-size: 1.5rem;
+}
+
+#buscador{
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
+#cajaBusqueda{
+    font-size: 1rem;
+    padding: 4%;
+    margin: 4%;
+}
+#lupa{
+    padding: 10%;
+    margin: 10%;
+}
+
+
+/*.header-section {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    background-color: aqua;*/
+/*}*/
+
+/*.header-section-1{*/
+/*    width: 25%;*/
+/*    !*background-color: aqua;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.header-section-2{*/
+/*    width: 50%;*/
+/*    !*background-color: yellow;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.header-section-3{*/
+/*    width: 25%;*/
+/*    !*background-color: green;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.cajaIdiomas{*/
+/*    border: 3px solid rgba(0,0,0,1);*/
+/*    background-color: grey;*/
+/*    width: 25%;*/
+/*    margin: auto;*/
+/*}*/
+
+
+/*.cabecera{*/
+/*    background-color: grey;*/
+/*    border: 3px solid rgba(0,0,0,1);*/
+/*    width: 90%;*/
+/*    height: 92%;*/
+/*    margin: auto;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.buscador{*/
+/*    width: 45%;*/
+/*    margin: auto;*/
+/*}*/
+
+/*h2{*/
+/*    text-align: center;*/
+/*}*/
+
+/*p{*/
+/*    text-align: center;*/
+/*}*/
+
+/*a {*/
+/*    color: #007bff;*/
+/*    text-decoration: none;*/
+/*    margin-bottom: 10px;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    display: flex;*/
+/*  }*/
+/*  */
+
+/*  a:hover {*/
+/*    color: #0056b3;*/
+/*    text-decoration: underline;*/
+/*  }*/
+/*  */
+/*  */
+/*  a:visited {*/
+/*    color: #4c2a85;*/
+/*  }*/
+/*  */
+/*  */
+/*  a:active {*/
+/*    color: #007bff;*/
+/*    text-decoration: underline;*/
+/*  }*/
+/*  */
+/*  */
+/*  a:disabled {*/
+/*    color: #6c757d;*/
+/*    pointer-events: none;*/
+/*    cursor: default;*/
+/*  }*/
+/*  */
+/*  */
+/*  a p {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    line-height: 1.2;*/
+/*    text-align: center;*/
+/*  }*/
+
+/*  a img {*/
+/*    width: 10%;*/
+/*    height: auto;*/
+/*    */
+/*  }*/
+/* */
+/*  */
+/*  */
