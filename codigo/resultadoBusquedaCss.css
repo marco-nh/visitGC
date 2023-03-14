@@ -12,12 +12,13 @@ body{
 
 .cabeceraBusqueda{
     display:grid;
+    margin-left: 50px;
 }
 
 
 .cabeceraBusqueda input{
-    width: 45%;
-    height: 50%;
+    width: 200px;
+    height: 20px;
 }
 
 .resultado{
@@ -34,12 +35,9 @@ ul{
     border: 3px solid rgba(0,0,0,1);
     max-width: 100%;
     height: auto;
-
-    justify-content: center;
-    align-items: center;
     margin: auto;
     float: left;
-
+    grid-area: imagen;
 }
 
 p{
@@ -50,6 +48,7 @@ p{
     display: inline-block;
     /*background-color: cadetblue;*/
     text-align: left;
+    grid-area:lugar;
 }
 @media only screen and (min-width: 667px) {
     li{
@@ -57,6 +56,9 @@ p{
         display: grid;
         grid-template-columns: 0.2fr 1fr;
         grid-gap: 20px 20px;
+        grid-template-areas:
+            "imagen ."
+            "imagen lugar";
         padding: 10px;
         margin: 40px;
         align-items: center;
@@ -66,8 +68,7 @@ p{
     }
     .cabeceraBusqueda{
         /*background-color: aqua;*/
-        height: 60%;
-        grid-template-columns: 0.3fr 0.7fr;
+        grid-template-columns: 350px 1fr;
         align-items: center;
     }
     .cabeceraBusqueda h2{
@@ -76,22 +77,33 @@ p{
 }
 @media only screen and (max-width: 667px) {
     li{
-        display: grid;
         list-style: none;
-        grid-auto-flow: column;
-        grid-template-rows: 3fr 1fr;
-    }
-    .nombreLugar{
-        justify-self: center;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr;
+        grid-gap: 20px 20px;
+        grid-template-areas:
+            "imagen ."
+            "imagen lugar";
+        padding: 10px;
+        margin: 40px;
+        align-items: center;
     }
     .resultado{
-        padding: 150px;
+        padding: 50px;
+        align-self: end;
     }
     .cabeceraBusqueda{
         /*background-color: aqua;*/
-        height: 60%;
-        grid-template-rows: 0.3fr 0.7fr;
+        grid-template-rows: 0.5fr auto;
         align-items: center;
         justify-items: center;
+    }
+    .resultado{
+        background-color: grey;
+        border: 3px solid rgba(0,0,0,1);
+        max-width: 100%;
+        height: auto;
+        align-self: end;
+        margin: auto;
     }
 }
