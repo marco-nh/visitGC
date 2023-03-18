@@ -92,9 +92,6 @@ p{
 		left: 20%;
 	}
 
-	.listaGenero{
-
-	}
 
 	.genero  a:link{
 
@@ -192,15 +189,6 @@ p{
 	}
 	.comentariosHome{
 		grid-area: comentariosHome;
-	}
-
-	#comentario {
-
-
-	}
-
-	.listaComentarios{
-
 	}
 
 
