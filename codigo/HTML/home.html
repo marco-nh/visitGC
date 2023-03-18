@@ -8,22 +8,30 @@
   <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
   <link rel="stylesheet" href="../CSS/stylesHome.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
 </head>
 <body>
 <div id="wrapper">
   <header id="main_header" w3-include-html="headerVisitGC.html">
     <!--<h1>This is the main title of the website</h1>-->
   </header>
-
-  <main class="containerHome">
-      <section class="descripcionHome">
-        <div class="bloqueL"><p>Pequeña descripcion del sitio</p></div>
-        <h2>el sitio marcado se basa en una localizacion muy conocida</h2>
-        <div class="link"><a href="lugar.html"><h2>Leer mas...</h2></a></div>
+  
+  <main class="containerHome" id="mainContainer">
+     
+      <section class="descripcionHome" >
+        <div class="bloqueL" id="mostrarDescripcion"></div>
       </section>
+
       <div class="mapaHome">
-        <div class="bloqueL2"><p>Mapa</p></div>
+        <div class="bloqueL2" id="mapa"><p>Mapa</p></div>
       </div>
+
      <nav class="generoHome">
        <ul class="lista">
          <li><div class="genero"><p>Genero</p></div></li>
@@ -42,6 +50,7 @@
          </ul>
        </div>
      </nav>
+     <script src="../JAVASCRIPT/home.js"></script>
   </main>
 
   <footer id="main_footer" w3-include-html="footer.html">
