@@ -1,5 +1,4 @@
 .container {
-  display: flex;
   flex-direction: column;
   margin: 1rem;
   padding: 1rem;
@@ -29,7 +28,7 @@
 
 .imagenPerfil {
   border-radius: 50%;
-  width: 10%;
+  width: 15%;
   height: auto;
     
 }
@@ -51,4 +50,54 @@ li{
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/*Tablet*/
+@media only screen and (max-width: 900px) {
+  .container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "informacionUsuario informacionUsuario"
+    "listaLugaresFavoritos listaLugaresFavoritos";
+  }
+
+  .campos{
+    grid-area: campos;
+  }
+
+  .informacionUsuario{
+    grid-area: informacionUsuario;
+    display: grid;
+    grid-template-columns: 60% 50%;
+    grid-template-areas:
+        "holaNombre holaNombre"
+        "campos imagenUsuario";
+    align-items: center;
+  }
+
+  #holaNombre{
+    grid-area: holaNombre;
+  }
+
+  .imagenUsuario{
+    grid-area: imagenUsuario;
+  }
+
+  .imagenPerfil{
+    width: 40%;
+  }
+
+  .listaLugaresFavoritos{
+    grid-area: listaLugaresFavoritos;
+  }
+
+
+
+}
+
+
+/*Movil*/
+@media only screen and (max-width: 600px){
+
 }
