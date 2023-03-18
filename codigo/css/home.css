@@ -14,7 +14,7 @@ p{
 	grid-template-rows: 30rem;
 	grid-template-areas:
 			"descripcionHome mapaHome listaGenero"
-			"comentarios";
+			"comentariosHome";
 	gap: 0.5rem;
 	padding: 1em;
 	margin: 1em;
@@ -50,16 +50,19 @@ p{
 
 .genero a:hover{
 	background-color: #6972f7;
+
 }
 
-
-
-#comentarios{
+#comentariosHome{
 	grid-column: 1/4;
 }
 
 .comentario{
 	display: flex;
+}
+
+.comentario p{
+	text-align: left;
 }
 
 /*Tablet*/
@@ -171,6 +174,7 @@ p{
 		left: 10%;
 		width: 75%;
 		overflow-x: scroll;
+		scrollbar-width: none;
 	}
 
 	.listaGenero{
@@ -186,8 +190,18 @@ p{
 	.genero a:hover{
 		background-color: #6972f7;
 	}
-	.comentarios{
-		grid-area: comentarios;
+	.comentariosHome{
+		grid-area: comentariosHome;
 	}
+
+	#comentario {
+
+
+	}
+
+	.listaComentarios{
+
+	}
+
 
 }
