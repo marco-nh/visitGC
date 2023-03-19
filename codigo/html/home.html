@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="This is an HTML5 example">
     <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>VisitGC</title>
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
@@ -16,11 +17,19 @@
     <header id="main_header" w3-include-html="header.html">
     </header>
 
+
+
     <div id="containerHome">
 
         <section id="descripcionHome">
-            <a href="lugar.html"><h2>Lugar</h2></a>
-            <a href="lugar.html"><p>El sitio marcado se basa en una localizacion muy conocida</p></a>
+            <div id="titulo">
+                <h2 id="titulo_h2">Lugar</h2>
+                <div>
+                    <img src="../imágenes/star.png" width="40px">
+                    <img src="../imágenes/sun-umbrella.png" width="40px">
+                </div>
+            </div>
+            <p>El sitio marcado se basa en una localizacion muy conocida</p>
             <a href="lugar.html"><p>Leer mas...</p></a>
         </section>
 
@@ -42,15 +51,14 @@
             </ul>
         </nav>
 
-        <section id="comentarios">
+        <section id="comentariosHome">
             <h2>Últimas reseñas</h2>
             <ul class="listaComentarios">
-                <lu><div class="comentario"><p>1º aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></div></lu>
+                <lu><div class="comentario"><p>1º Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></lu>
                 <lu><div class="comentario"><p>2º</p></div></lu>
                 <lu><div class="comentario"><p>3º</p></div></lu>
             </ul>
         </section>
-
 
     </div>
 
@@ -67,7 +75,6 @@
     w3IncludeHTML();
 
 </script>
-
 
 </body>
 </html>

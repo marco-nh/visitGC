@@ -9,7 +9,9 @@ body{
     grid-gap: 1rem;
     align-items: center;
     background-color: aqua;
-}
-#programadores h1{
     text-align: center;
+    align-content: center;
+}
+#programadores {
+
 }

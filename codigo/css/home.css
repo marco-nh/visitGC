@@ -21,6 +21,11 @@ p{
 	border: 1em;
 }
 
+#titulo{
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
 #descripcionHome a:link, a:hover{
 	text-decoration: none;
 	text-decoration-color: black;
@@ -92,6 +97,9 @@ p{
 		left: 20%;
 	}
 
+	.listaGenero{
+
+	}
 
 	.genero  a:link{
 
@@ -189,6 +197,15 @@ p{
 	}
 	.comentariosHome{
 		grid-area: comentariosHome;
+	}
+
+	#comentario {
+
+
+	}
+
+	.listaComentarios{
+
 	}
 
 
