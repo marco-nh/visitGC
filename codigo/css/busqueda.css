@@ -53,6 +53,29 @@ li{
 
 }
 
+.text{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas:
+        "icons nombreLugar"
+        "nombreDescripcion nombreDescripcion";
+}
+
+.icons{
+    grid-area: icons;
+}
+
+.nombreLugar{
+    grid-area: nombreLugar;
+
+}
+
+.nombreDescripcion{
+    grid-areas: nombreDescripcion;
+    grid-column: 1/3;
+    justify-self: left;
+}
+
 p{
     text-align: center;
 }

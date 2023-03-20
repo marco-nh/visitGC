@@ -24,6 +24,23 @@ p{
 #titulo{
 	display: grid;
 	grid-template-columns: 1fr;
+	grid-template-areas:
+		"titulo_h2 titulo_h2"
+		"titulo_img . ";
+}
+
+#titulo_h2{
+	grid-area: titulo_h2;
+}
+
+#titulo_img{
+	grid-area: titulo_img;
+	float: left;
+
+}
+
+#titulo_icon{
+	padding-right: 5px;
 }
 
 #descripcionHome a:link, a:hover{
