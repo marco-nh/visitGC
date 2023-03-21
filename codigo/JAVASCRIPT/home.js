@@ -77,13 +77,25 @@ function modificarHomeLogeado(){
 
 }
 
-
+async function obtenerLugares(){
+    const respuesta = await fetch('../JSON/lugares.json');
+    const datos = await respuesta.json();
+    return datos.lugares;
+}
 
 document.addEventListener("DOMContentLoaded", function() {
 
     inicializarMapa();
     modificarHomeLogeado();
-    agregarMarcador(28.143200398075997, -15.433784670611074, 'Las Canteras', 'Esta es una breve descripcion del sitio');
-    
+
+    (async () => {
+        const lugares = await obtenerLugares();
+      
+        if (lugares) {
+          lugares.forEach(lugar => {
+            agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1);
+          });
+        }
+      })();
 
 });
