@@ -2,10 +2,10 @@
     "usuarios": [
       {
         "id": "1",
-        "nombre": "Juan Pérez",
+        "nombre": "Juan Perez",
         "correo": "juan.perez@example.com",
         "contraseña": "contraseña1",
-        "idioma": "Ingles",
+        "idioma": "Inglés",
         "rol": 2
       },
       {
