@@ -7,32 +7,39 @@
   <title>VisitGC</title>
   <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
-  <link rel="stylesheet" href="../CSS/lugarCss.css">
-
+  <link rel="stylesheet" href="../CSS/lugar.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-  crossorigin=""/>
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-  crossorigin=""></script>
+          integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+          crossorigin=""></script>
+
+  <script src="../JAVASCRIPT/header.js"></script>
 </head>
 <body>
 <div id="wrapper">
 
-  <header id="main_header" w3-include-html="headerVisitGC.html">
+
+
+  <header id="main_header">
     <!--<h1>This is the main title of the website</h1>-->
   </header>
 
-  <main class="content">
-    <h1 id="titulo">Lugar</h1>
-    <section class="seccion1">
-      <div class="informacion1" id="info1"><h2>Informacion</h2></div> <div class="mapa" id="mapa"><h2>Mapa</h2></div>
-    </section>
-    <section class="seccion2">
-      <div class="foto" id="fotoLugar"><h2>Foto</h2></div> <div class="informacion2" id="info2"><h2>Informacion</h2></div>
-    </section>
-
-    
+  <div class="content">
+    <div id="titulo">
+      <h2 id="titulo_h2">Lugar</h2>
+      <div>
+        <img src="../PNG/sun-umbrella.png" width="40px">
+        <img src="../PNG/star.png" width="40px">
+      </div>
+    </div>
+    <div class="seccion1">
+      <div class="foto" id="fotoLugar"><h2>Foto</h2></div><div class="mapa" id="mapa"><h2>Mapa</h2></div>
+    </div>
+    <div class="seccion2">
+      <div class="informacion1" id="info1"><h2>Informacion</h2></div> <div class="informacion2" id="info2"><h2>Informacion</h2></div>
+    </div>
     <div class="comentarios">
       <div class="cajaComentarios">
         <h2>Comentarios</h2>
@@ -43,7 +50,7 @@
       </div>
     </div>
     <script src="../JAVASCRIPT/lugar.js"></script>
-  </main>
+  </div>
 
   <footer id="main_footer" w3-include-html="footer.html">
 

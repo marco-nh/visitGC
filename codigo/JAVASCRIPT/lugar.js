@@ -1,13 +1,13 @@
 let map;
 function inicializarMapa(latitud, longitud){
-    map = L.map('mapa').setView([latitud, longitud], 20);
-    
+    map = L.map('mapa',{zoomControl: false}).setView([latitud, longitud], 20);
+
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-    maxZoom: 18
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18
     }).addTo(map);
-
+    L.control.zoom({position: "bottomright"}).addTo(map);
     L.marker([latitud, longitud]).addTo(map);
 }
 
@@ -29,19 +29,19 @@ async function obtenerLugares(){
 
 async function obtenerLugarPorCoordenadas(latitud, longitud) {
     const lugares = await obtenerLugares();
-  
+
     if (lugares) {
-      const lugarEncontrado = lugares.find(lugar => {
-        return lugar.latitud === latitud && lugar.longitud === longitud;
-      });
-  
-      if (lugarEncontrado) {
-        return lugarEncontrado;
-      } else {
-        console.error("No se encontró un lugar con las coordenadas proporcionadas");
-      }
+        const lugarEncontrado = lugares.find(lugar => {
+            return lugar.latitud === latitud && lugar.longitud === longitud;
+        });
+
+        if (lugarEncontrado) {
+            return lugarEncontrado;
+        } else {
+            console.error("No se encontró un lugar con las coordenadas proporcionadas");
+        }
     } else {
-      console.error("No se pudieron cargar los lugares");
+        console.error("No se pudieron cargar los lugares");
     }
 }
 
@@ -57,13 +57,16 @@ function rellenarHTML(lugar){
 
     const lugarFoto=document.getElementById("fotoLugar");
     const imagen = document.createElement("img");
+    imagen.setAttribute("style","object-fit: cover;\n" +
+        "    width:100%;\n" +
+        "    height:70%;");
     imagen.src=lugar.foto;
     lugarFoto.appendChild(imagen);
 
 }
 document.addEventListener("DOMContentLoaded", function() {
 
-    
+
     const {latitud , longitud } = obtenerParametrosURL();
     inicializarMapa(latitud, longitud);
     (async () => {
@@ -71,7 +74,5 @@ document.addEventListener("DOMContentLoaded", function() {
         //console.log(lugar.nombre);
         rellenarHTML(lugar);
     })();
-   
-    
 
 });
