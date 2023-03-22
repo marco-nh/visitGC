@@ -5,13 +5,28 @@ body{
 
 #footer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 20% 1fr 20%;
     grid-gap: 1rem;
     align-items: center;
     background-color: aqua;
     text-align: center;
     align-content: center;
 }
-#programadores {
 
+.contacto{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    text-align: left;
+}
+
+.contacto p{
+    padding-right: 10px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    #footer{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+        justify-content: center;
+    }
 }

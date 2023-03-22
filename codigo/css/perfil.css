@@ -7,7 +7,6 @@
 .informacionUsuario {
   display: flex;
   flex-direction: column;
-  align-items: inline;
 }
   
 .imagenUsuario {
@@ -51,6 +50,30 @@ li{
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+
+
+.lugar{
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-template-areas:
+        "foto icons"
+        "foto nombre";
+}
+
+.foto{
+  grid-area: foto;
+}
+
+.icons{
+  grid-area: icons;
+  padding-left: 1rem;
+}
+
+.nombre{
+  grid-area: nombre;
+  padding-left: 1rem;
+}
+
 
 /*Tablet*/
 @media only screen and (max-width: 900px) {
