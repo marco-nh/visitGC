@@ -1,6 +1,4 @@
-body{
-    margin:0px;
-}
+
 .content{
     width: 100%;
     height: 85%;
@@ -18,9 +16,9 @@ body{
     
 }
 
-h2{
+.cabeceraBusqueda h2{
     display: inline-block;
-    width: 50%;
+    margin: 20px;
 }
 
 .cabeceraBusqueda input{
@@ -33,10 +31,8 @@ h2{
     height: 80%;
 }
 
-ul{
-    float: left;
-}
-li{
+
+.lista li{
     list-style: none;
     padding: 10px;
     margin: 40px;
@@ -55,10 +51,12 @@ li{
 
 .text{
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 0.2fr 0.2fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-gap: 0px 20px;
     grid-template-areas:
-        "icons nombreLugar"
-        "nombreDescripcion nombreDescripcion";
+        "foto icons nombreLugar"
+        "foto nombreDescripcion nombreDescripcion";
 }
 
 .icons{
@@ -71,8 +69,7 @@ li{
 }
 
 .nombreDescripcion{
-    grid-areas: nombreDescripcion;
-    grid-column: 1/3;
+    grid-area: nombreDescripcion;
     justify-self: left;
 }
 
@@ -85,4 +82,24 @@ p{
     width: 80%;
     /*background-color: cadetblue;*/
     text-align: left;
+}
+
+.bloqueL {
+    background-color: #999999;
+    border: 3px solid rgba(0,0,0,1);
+    width: 100px;
+    height: 100px;
+    vertical-align: 40px;
+    grid-area: foto;
+}
+
+@media only screen and (max-width: 1334px) {
+    .bloqueL{
+        padding: 25px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .bloqueL{
+        padding: 50px;
+    }
 }
