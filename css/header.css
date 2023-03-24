@@ -126,16 +126,18 @@
         display: none;
     }
 
-
     #sidebar:before{
         display: none;
     }
 
     #sidebar.is_active, #sidebar:after{
         display: flex;
+        position: fixed;
+        top: 5rem;
+        left: 0.5rem;
         background-color: #6972f7;
         max-width: 25rem;
-
+        z-index: 5;
     }
 
 
