@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+
+
+       <div class="wrapper" >
+
+            <section class="header_section_1" >
+                <a href="home.html" id="casita"><img src="../imágenes/casita.png" alt="home" height="45em"/></a>
+                <a href="registroLogin.html" id="SignUpLogIn"><p>Registro | Login</p></a>
+                <div id="cajaIdiomas">
+                   <p class="idioma"><img src="../imágenes/spain.png" alt="español" height="50em"/>ES<p>
+                    <p class="idioma"><img src="../imágenes/united-kingdom.png" alt="english" height="50em"/>EN<p>
+                </div>
+            </section>
+
+            <section class="header_section_2">
+                <div class="cabecera"><h2>visitGC</h2></div>
+                <button id="menu_hamburguesa">
+                    <a href="#" id="menu_hamburguesa_letra">&#9776;</a>
+                </button>
+                <aside id="sidebar">
+                    <nav>
+                        <a>HOME</a>
+                        <a>SignUp</a>
+                    </nav>
+                </aside>
+            </section>
+
+            <section class="header_section_3">
+                <div id="planeaTuViaje"><a href="planeaTuViaje.html"><p>Planea tu viaje</p></a></div>
+                <div id="buscador">
+                    <a href="busqueda.html"><input id="cajaBusqueda" type="text" placeholder="Buscar lugar..." size=15em"></a>
+                    <img id="lupa" src="../imágenes/lupa.png" alt="lupa" height="25em"/>
+                </div>
+            </section>
+        </div>
+
+        <!--nav id="navegador" >
+
+            <a id="cabecera" href="#">
+                VisitGC
+            </a>
+            <a href="#" id="menu-icon">&#9776;</a>
+
+            <ul>
+                <li id="navegador_item1">
+                    <a href="home.html" id="casita_movil"><img src="../imágenes/casita.png" alt="home" height="45em"/></a>
+                </li>
+                <li id="navegador_item2">
+                    <a href="registroLogin.html" id="SignUpLogIn"><p>Registro | Login</p></a>
+                </li>
+                <li id="navegador_item3">
+                    <a href="#" id="idiomas">
+                        <div class="cajaIdiomas">
+                            <p class="idioma"><img src="../imágenes/spain.png" alt="español" height="50em"/>ES<p>
+                            <p class="idioma"><img src="../imágenes/united-kingdom.png" alt="english" height="50em"/>EN<p>
+                        </div>
+                    </a>
+                </li>
+
+                <li id="navegador-item4">
+                    <div id="planeaTuViaje"><a href="planeaTuViaje.html"><p>Planea tu viaje</p></a></div>
+                    <div id="buscador">
+                        <a href="busqueda.html"><input id="cajaBusqueda" type="text" placeholder="Buscar lugar..." size=15em"></a>
+                        <img id="lupa" src="../imágenes/lupa.png" alt="lupa" height="25em"/>
+                    </div>
+                </li>
+
+            </ul>
+
+        </nav-->
+<script>
+    const menu_hamb = document.getElementById("menu_hamburguesa");
+    const sidebar = document.getElementById("sidebar");
+
+    menu_hamb.addEventListener('click', function() {
+        menu_hamb.classList.toggle('is_active');
+        sidebar.classList.toggle('is_active');
+    });
+</script>
+
+ </body>
+ </html>

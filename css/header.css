@@ -1,0 +1,142 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    background-color: aqua;
+
+}
+
+.header_section_1{
+    display: grid;
+    grid-template-areas:
+            "casita SignUpLogIn"
+            "cajaIdiomas cajaIdiomas";
+    align-items: center;
+}
+
+
+#casita{
+    justify-self: center;
+    grid-area: casita;
+}
+
+#SignUpLogIn{
+    font-size: 1rem;
+    grid-area: SignUpLogIn;
+}
+
+#cajaIdiomas{
+    display: inline-flex;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2;
+    grid-area: cajaIdiomas;
+}
+
+.idioma{
+    padding: 2%;
+    margin: 2%;
+    display: flow-root;
+}
+
+.header_section_2{
+    background-color: #6c757d;
+    text-align: center;
+}
+
+.header_section_3{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    text-align: center;
+}
+
+
+#planeaTuViaje{
+    font-size: 1rem;
+}
+
+#buscador{
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
+#cajaBusqueda{
+    font-size: 1rem;
+    padding: 4%;
+    margin: 4%;
+}
+#lupa{
+    padding: 10%;
+    margin: 10%;
+}
+
+#menu_hamburguesa{
+    display: none;
+}
+
+#sidebar{
+    display: none;
+}
+
+/*Movil menu hamburguesa*/
+@media screen and (max-width: 667px) {
+
+    .wrapper{
+        display: block;
+    }
+
+    .cabecera{
+        grid-area: cabecera;
+    }
+
+    #menu_hamburguesa{
+        display: flex;
+        grid-area: menu_hamburguesa;
+        z-index: 2;
+        cursor: pointer;
+        background-color: #a8aeff;
+        font-size: 2.5rem;
+        margin-left: 1rem;
+    }
+
+    #menu_hamburguesa_letra{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+
+    }
+
+    .header_section_1{
+        display: none;
+    }
+
+    .header_section_2{
+        display: grid;
+        grid-template-columns: 10% 1fr;
+        grid-template-areas: "menu_hamburguesa cabecera";
+        align-items: center;
+        justify-items: center;
+        background-color: aqua;
+    }
+
+    .header_section_3{
+        display: none;
+    }
+
+
+    #sidebar:before{
+        display: none;
+    }
+
+    #sidebar.is_active, #sidebar:after{
+        display: flex;
+        background-color: #6972f7;
+        max-width: 25rem;
+
+    }
+
+
+}
