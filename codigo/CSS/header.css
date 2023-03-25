@@ -15,6 +15,10 @@
     font-size: 1rem;
     grid-area: SignUpLogIn2;
 }
+#SignUpLogIn2_mov{
+    font-size: 1rem;
+    grid-area: SignUpLogIn2_mov;
+}
 
 #cajaIdiomas{
     display: inline-flex;
@@ -305,7 +309,7 @@
         display: grid;
         grid-template-areas:
                 "signName"
-                "SignUpLogIn2";
+                "SignUpLogIn2_mov";
     }
 
     /* grid division nombre y cerrar sesión*/
