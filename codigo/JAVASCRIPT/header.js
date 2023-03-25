@@ -3,8 +3,6 @@ function modificarHomeLogeado(){
     let divInfo = document.getElementById('SignUpLogIn');
     if(logeado === 'true'){
         const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-        const h2Nombre = document.createElement('h2');
-        h2Nombre.innerHTML = `Hola, ${usuario.nombre}!!!!!!!!!`;
 
         const enlacePerfil = document.createElement('a');
         enlacePerfil.href = '../HTML/perfil.html';
@@ -62,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.body.insertBefore(headerElement, document.body.firstChild);
             //modificarHomeLogeado();
-            menuhamb();
+            //menuhamb();
             modificarHomeLogeado();
         })
         .catch((error) => {
