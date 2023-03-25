@@ -17,7 +17,7 @@ body{
     "municipio municipio municipio"
     "visitalugar visitalugar visitalugar"
     "lugaresbloque1 lugaresbloque2 lugaresbloque2"
-    ;
+;
     margin: 0px 0px 0px 10%;
     text-align: left;
 }
@@ -40,29 +40,33 @@ body{
 .bloqueL{
     background-color: #999999;
     border: 3px solid rgba(0,0,0,1);
-    width: 100px;
-    height: 100px;
-    margin-top: 50px;
+    width: 1fr;
+    height: 1fr;
     display: inline-block;
     vertical-align: 40px;
+    margin: 1rem;
+    grid-area: bloqueL;
 }
 
-.lugar1 h2{
-    display: inline-block;
+.lugar{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas:
+        "bloqueL icons"
+        "bloqueL nombre";
+}
 
+.icons{
+    grid-area: icons;
 }
-.lugar2 h2{
-    display: inline-block;
+
+.nombre{
+    grid-area: nombre;
 }
-.lugar3 h2{
-    display: inline-block;
-}
-.lugar4 h2{
-    display: inline-block;
-}
+
 .lugaresBloque1{
-    height:500px;
-    width:60%;
+    height:80%;
+    width:70%;
     overflow: auto;
     grid-area: lugaresbloque1;
 }
@@ -109,18 +113,15 @@ body{
         grid-auto-flow: row;
         justify-content: center;
     }
-    .lugar1 h2{
-        display: block;
+
+    .lugar{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "bloqueL"
+                "icons"
+                "nombre";
     }
-    .lugar2 h2{
-        display: block;
-    }
-    .lugar3 h2{
-        display: block;
-    }
-    .lugar4 h2{
-        display: block;
-    }
+
     .bloqueL{
         height: 300px;
         width: 80%;
