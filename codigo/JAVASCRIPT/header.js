@@ -24,7 +24,7 @@ function modificarHomeLogeado(){
 
 
         const botonCerrarSesion = document.createElement('button');
-        var botonCerrarSesion_mov = document.createElement('button');
+        const botonCerrarSesion_mov = document.createElement('button');
         botonCerrarSesion.textContent = 'Cerrar sesión';
         botonCerrarSesion.id = 'SignUpLogIn2';
 
@@ -37,8 +37,19 @@ function modificarHomeLogeado(){
             window.location.href = 'home.html';
             console.log(window.location.href);
         };
-        botonCerrarSesion_mov =botonCerrarSesion
-        botonCerrarSesion_mov = 'SignUpLogIn2_mov';
+
+
+        botonCerrarSesion_mov.onclick = function() {
+
+            sessionStorage.removeItem('usuario');
+            sessionStorage.removeItem('login');
+
+
+            window.location.href = 'home.html';
+            console.log(window.location.href);
+        };
+        botonCerrarSesion_mov.textContent = 'Cerrar sesión';
+        botonCerrarSesion_mov.id = 'SignUpLogIn2_mov';
 
         headersection1.appendChild(botonCerrarSesion);
         SignUpLogIn_mov.appendChild(botonCerrarSesion_mov);
