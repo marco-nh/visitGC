@@ -60,10 +60,51 @@ document.addEventListener("DOMContentLoaded", function() {
 */
 
 
-const menu_hamb = document.getElementById("menu_hamburguesa");
-const sidebar = document.getElementById("sidebar");
+/*
+document.addEventListener("DOMContentLoaded", function() {
 
-menu_hamb.addEventListener('click', function() {
-    menu_hamb.classList.toggle('is_active');
-    sidebar.classList.toggle('is_active');
+    fetch("header.html")
+        .then((response) => response.text())
+        .then((html) => {
+            const headerElement = document.createElement("header");
+
+            headerElement.innerHTML = html;
+
+            document.body.insertBefore(headerElement, document.body.firstChild);
+            //modificarHomeLogeado();
+            menuhamb();
+            //modificarHomeLogeado();
+        })
+        .catch((error) => {
+            console.warn("Error al cargar el header:", error);
+        });
+});*/
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    fetch("header.html")
+        .then((response ) => response.text())
+        .then((html) => {
+            const headerElement = document.createElement("header");
+            headerElement.innerHTML = html;
+            document.body.insertBefore(headerElement, document.body.firstChild);
+            menuhamb();
+        })
+        .catch((error) => {
+            console.warn("Error al cargar el header:", error);
+        });
+
+
 });
+
+
+function menuhamb(){
+    const menu_hamb = document.getElementById("menu_hamburguesa");
+    const sidebar = document.getElementById("sidebar");
+
+    menu_hamb.addEventListener('click', function() {
+        menu_hamb.classList.toggle('is_active');
+        sidebar.classList.toggle('is_active');
+    });
+}

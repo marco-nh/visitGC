@@ -126,6 +126,7 @@
         display: none;
     }
 
+
     #sidebar:before{
         display: none;
     }
@@ -136,8 +137,99 @@
         top: 5rem;
         left: 0.5rem;
         background-color: #6972f7;
-        max-width: 25rem;
-        z-index: 5;
+        max-width: 20rem;
+        z-index: 500;
+
+    }
+
+
+    #sidebar div, img{
+        padding: 0.5rem;
+    }
+
+    #navigation{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "top"
+            "buscador_mov"
+            "SignUpLogIn_mov"
+            "planeaTuViaje_mov"
+            "cajaIdiomas_mov";
+        grid-gap: 10px;
+        justify-items: center;
+    }
+
+    #navigation a{
+        color: black;
+    }
+
+    #top{
+        grid-area: top;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "close_mov casita_mov";
+        grid-gap: 4rem;
+    }
+
+    #close_mov{
+        cursor: pointer;
+        grid-area: close_mov;
+    }
+
+    #casita_mov{
+        cursor: pointer;
+        grid-area: casita_mov;
+    }
+
+    #buscador_mov{
+        grid-area: buscador_mov;
+        display: flex;
+    }
+
+    #SignUpLogIn_mov{
+        grid-area: SignUpLogIn_mov;
+    }
+
+    #planeaTuViaje_mov{
+        grid-area: planeaTuViaje_mov;
+    }
+
+    #SignUpLogIn_mov a:link{
+        text-decoration: none;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        background-color: #6972f7;
+        width: 100%;
+    }
+
+    #SignUpLogIn_mov a:hover{
+        text-decoration: none;
+        background-color: #a8aeff;
+        width: 100%;
+    }
+
+    #planeaTuViaje_mov a:link{
+        text-decoration: none;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        background-color: #6972f7;
+
+    }
+
+    #planeaTuViaje_mov a:hover{
+        text-decoration: none;
+        background-color: #a8aeff;
+    }
+
+    #cajaIdiomas_mov{
+        grid-area: cajaIdiomas_mov;
+        display: inline-flex;
+    }
+
+    .idioma_mov{
+        display: inline-grid;
     }
 
 
