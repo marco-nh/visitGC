@@ -1,6 +1,9 @@
 function modificarHomeLogeado(){
     const logeado=sessionStorage.getItem('login');
     let divInfo = document.getElementById('SignUpLogIn');
+    let divInfo_mov = document.getElementById('SignUpLogIn_mov');
+    var navig = document.getElementById('navigation');
+    console.log(divInfo_mov);
     if(logeado === 'true'){
         const usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
@@ -8,12 +11,16 @@ function modificarHomeLogeado(){
         enlacePerfil.href = '../HTML/perfil.html';
         enlacePerfil.textContent = `${usuario.nombre}`;
 
+        const enlacePerfil_mov = document.createElement('a');
+        enlacePerfil_mov.href = '../HTML/perfil.html';
+        enlacePerfil_mov.textContent = `${usuario.nombre}`;
 
         divInfo.innerHTML = enlacePerfil.innerHTML;
         divInfo.textContent = `${usuario.nombre}`;
         divInfo.href = '../HTML/perfil.html';
 
-        console.log(divInfo);
+        divInfo_mov.innerHTML = `<a id="signName"href="../HTML/perfil.html">${usuario.nombre}</a>`;
+
 
 
         const botonCerrarSesion = document.createElement('button');
@@ -31,6 +38,7 @@ function modificarHomeLogeado(){
         };
         console.log(botonCerrarSesion);
         headersection1.appendChild(botonCerrarSesion);
+        SignUpLogIn_mov.appendChild(botonCerrarSesion);
 
     }
     if(logeado === false){
@@ -38,17 +46,7 @@ function modificarHomeLogeado(){
         divInfo.href = '../HTML/registroLogin.html';
     }
 }
-/*
-function menuhamb(){
-    const menu_hamb = document.getElementById("menu_hamburguesa");
-    const sidebar = document.getElementById("sidebar");
 
-    menu_hamb.addEventListener('click', function() {
-        menu_hamb.classList.toggle('is_active');
-        sidebar.classList.toggle('is_active');
-    });
-}
-*/
 document.addEventListener("DOMContentLoaded", function() {
 
     fetch("header.html")
@@ -60,10 +58,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.body.insertBefore(headerElement, document.body.firstChild);
             //modificarHomeLogeado();
-            //menuhamb();
+            menuhamb();
             modificarHomeLogeado();
         })
         .catch((error) => {
             console.warn("Error al cargar el header:", error);
         });
+
+
 });
+
+
+function menuhamb(){
+    const menu_hamb = document.getElementById("menu_hamburguesa");
+    const sidebar = document.getElementById("sidebar");
+
+    menu_hamb.addEventListener('click', function() {
+        menu_hamb.classList.toggle('is_active');
+        sidebar.classList.toggle('is_active');
+    });
+}
