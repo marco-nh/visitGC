@@ -50,14 +50,13 @@ body{
 .comentarios{
     height:600px;
     width:100%;
-
+    display: none;
 }
 .cajaComentarios{
     height:80%;
     width:90%;
     background-color: #999999;
     border: 3px solid rgba(0,0,0,1);
-
 }
 .cajaComentarios h2{
     margin-left: 1%;

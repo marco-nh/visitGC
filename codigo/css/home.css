@@ -107,6 +107,7 @@ p{
 
 #comentariosHome{
 	grid-column: 1/4;
+	display: none;
 }
 
 .comentario{
@@ -253,15 +254,6 @@ p{
 
 	.comentariosHome{
 		grid-area: comentariosHome;
-	}
-
-	#comentario {
-
-
-	}
-
-	.listaComentarios{
-
 	}
 
 
