@@ -1,0 +1,88 @@
+body{
+    margin:0px;
+}
+.content{
+    width: 100%;
+    height: 85%;
+    /*background-color: green;*/
+    display: grid;
+    flex-wrap: wrap;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.cabeceraBusqueda{
+    /*background-color: aqua;*/
+    height: 60%;
+    
+}
+
+h2{
+    display: inline-block;
+    width: 50%;
+}
+
+.cabeceraBusqueda input{
+    display: inline-block;
+    width: 45%;
+}
+
+.resultado{
+    /*background-color: red;*/
+    height: 80%;
+}
+
+ul{
+    float: left;
+}
+li{
+    list-style: none;
+    padding: 10px;
+    margin: 40px;
+}
+.resultado{
+    background-color: grey;
+    border: 3px solid rgba(0,0,0,1);
+    width: 7%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    float: left;
+
+}
+
+.text{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas:
+        "icons nombreLugar"
+        "nombreDescripcion nombreDescripcion";
+}
+
+.icons{
+    grid-area: icons;
+}
+
+.nombreLugar{
+    grid-area: nombreLugar;
+
+}
+
+.nombreDescripcion{
+    grid-areas: nombreDescripcion;
+    grid-column: 1/3;
+    justify-self: left;
+}
+
+p{
+    text-align: center;
+}
+
+.nombreLugar{
+    display: inline-block;
+    width: 80%;
+    /*background-color: cadetblue;*/
+    text-align: left;
+}

@@ -1,0 +1,255 @@
+body{
+}
+
+p{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#containerHome{
+	display: grid;
+	grid-template-columns: 20% 1fr 20%;
+	grid-template-rows: 30rem;
+	grid-template-areas:
+			"descripcionHome mapaHome listaGenero"
+			"comentariosHome . .";
+	gap: 0.5rem;
+	padding: 1em;
+	margin: 1em;
+	border: 1em;
+}
+
+#titulo{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"titulo_h2 titulo_h2"
+		"titulo_img titulo_star ";
+}
+
+#titulo_h2{
+	grid-area: titulo_h2;
+}
+
+#titulo_img{
+	grid-area: titulo_img;
+	float: left;
+
+}
+
+#titulo_icon{
+	padding-right: 5px;
+}
+
+
+#titulo_star_blue{
+
+}
+
+#descripcionHome a:link, a:hover{
+	text-decoration: none;
+	text-decoration-color: black;
+}
+
+#mapaHome{
+	background-color: #6c757d;
+}
+
+
+.listaGenero{
+	list-style: none;
+}
+
+.genero a:link{
+	text-decoration: none;			/*quita el subrayado*/
+	padding: 0.6em;
+	border-radius: 25px;			/*round edges*/
+	border-bottom-width: 0.1rem;
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+	font-size: 1.4rem;
+	display: block;
+	background-color: #a8aeff;
+	color: black;
+}
+
+.genero a:hover{
+	background-color: #6972f7;
+
+}
+
+
+.genero_div{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.genero_icon{
+	padding-right: 1rem;
+}
+
+
+#comentariosHome{
+	grid-column: 1/4;
+}
+
+.comentario{
+	display: flex;
+}
+
+.comentario p{
+	text-align: left;
+}
+
+/*Tablet*/
+@media only screen and (max-width: 900px){
+
+	#containerHome{
+		display: grid;
+		grid-template-columns: 20% 1fr;
+		grid-template-areas:
+			"descripcionHome mapaHome"
+			". asideHome"
+			"comentarios";
+		gap: 0.5rem;
+		padding: 1em;
+		margin: 1em;
+		border: 1em;
+	}
+
+	#mapaHome{
+		position: relative;
+		z-index: 0;
+	}
+
+	#asideHome{
+		position: absolute;
+		top: auto;
+		left: 20%;
+	}
+
+	.listaGenero{
+
+	}
+
+	.genero  a:link{
+
+		display: block;
+		font-size: 1rem;
+
+	}
+
+	.map-categories {
+		display: flex;
+		justify-content: center;
+		margin: 20px 0;
+	}
+
+	.map-category {
+		display: inline-block;
+		padding: 8px 10px;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 1;
+		text-align: center;
+		white-space: nowrap;
+		cursor: pointer;
+		background-color: #fff;
+		border: 1px solid #999;
+		border-radius: 2px;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+		color: #333;
+		text-shadow: 0 1px 0 #fff;
+		transition: background-color 0.2s ease-in-out;
+		margin-right: 10px;
+	}
+
+	.map-category:last-child {
+		margin-right: 0;
+	}
+
+	.map-category:hover {
+		background-color: #f2f2f2;
+	}
+
+
+
+}
+
+
+
+/*Movil*/
+@media only screen and (max-width: 600px){
+
+	#containerHome{
+		display: grid;
+		grid-template-columns: 95%;
+		grid-template-areas:
+			"mapaHome"
+			"descripcionHome"
+			"comentarios"
+			;
+		padding: 1em;
+		margin: 1em;
+		border: 1em;
+	}
+
+	#descripcionHome{
+		grid-area: descripcionHome;
+	}
+
+	#mapaHome{
+		grid-area: mapaHome;
+		z-index: 0;
+	}
+
+	#asideHome{
+		display: flex;
+		position: absolute;
+		top: auto;
+		left: 10%;
+		width: 75%;
+		overflow-x: scroll;
+		scrollbar-width: none;
+	}
+
+	.listaGenero{
+		display: flex;
+		padding-left: 0.2em;
+	}
+
+	.genero a:link{
+		margin-right: 10px;
+
+	}
+
+	.genero a:hover{
+		background-color: #6972f7;
+	}
+
+
+
+	.genero_icon{
+		padding-right: 10px;
+		width: 20px;
+	}
+
+
+	.comentariosHome{
+		grid-area: comentariosHome;
+	}
+
+	#comentario {
+
+
+	}
+
+	.listaComentarios{
+
+	}
+
+
+}

@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    background-color: aqua;
+    text-align: center;
+    align-content: center;
+}
+#programadores {
+
+}
