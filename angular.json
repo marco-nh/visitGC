@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "visitGC": {
+    "visitGC-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/visit-gc",
+            "outputPath": "dist/visit-gc-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,12 +25,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/leaflet/dist/leaflet.css",
+              "./node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "visitGC:build:production"
+              "browserTarget": "visitGC-angular:build:production"
             },
             "development": {
-              "browserTarget": "visitGC:build:development"
+              "browserTarget": "visitGC-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "visitGC:build"
+            "browserTarget": "visitGC-angular:build"
           }
         },
         "test": {
@@ -92,13 +90,15 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "98aa613f-d83b-4c63-8487-44ab91d21516"
+    "analytics": false
   }
 }

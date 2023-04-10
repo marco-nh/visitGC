@@ -5,19 +5,19 @@
 </head>
 <body>
 
-  <div class="card mx-5 my-5" style="width: 30%">
+  <div class="card mx-5 my-2">
 
-    <div id="iconos_descripcion">
-      <img class="card mx-2 my-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
-      <a><img class="card mx-2 my-2" style="margin-left: 200px" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
+    <img class="card-img" src={{fotoLugar}} alt="playa de las canteras">
+
+    <div class="card-img-overlay">
+      <img class="card my-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
+      <a><img class="card" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
     </div>
 
-    <img class="card-img" src="assets/imagenes/playa_las_canteras.jpg" alt="playa de las canteras">
-
-    <h2 class="card-title mx-2">Playa de las Canteras</h2>
+    <h2 class="card-title mx-2">{{tituloLugar}}</h2>
 
     <div class="card-body">
-      <p id="descripcionLugar">El sitio marcado se basa en una localizacion muy conocida</p>
+      <p id="descripcionLugar">{{descripcion}}</p>
     </div>
 
     <div class="card-footer">

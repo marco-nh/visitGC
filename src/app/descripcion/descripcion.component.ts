@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: "app-descripcion",
@@ -7,5 +7,13 @@ import {Component} from "@angular/core";
 })
 
 export class DescripcionComponent {
+  @Input() descripcion:string;
+  @Input() fotoLugar:string;
+  @Input() tituloLugar:string;
+
+
+  constructor() {
+
+  }
 
 }
