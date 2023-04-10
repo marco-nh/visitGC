@@ -15,6 +15,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { LugarComponent } from './lugar/lugar.component';
 
 
 const appRoute:Routes=[
@@ -23,6 +24,7 @@ const appRoute:Routes=[
   {path:'buscador', component:BuscadorComponent},
   {path:'sign_up', component:SignUpComponent},
   {path:'log_in', component:LogInComponent},
+  {path:'lugar', component:LugarComponent},
 
   {path:'**', component:ErrorPersonalizadoComponent}
 ];
@@ -40,7 +42,8 @@ const appRoute:Routes=[
     SignUpComponent,
     LogInComponent,
     ErrorPersonalizadoComponent,
-    MapaComponent
+    MapaComponent,
+    LugarComponent
   ],
   imports: [
     BrowserModule,
