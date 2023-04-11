@@ -1,80 +1,38 @@
 <!doctype html>
 <html lang="en">
 
-
-
 <body>
 
-<div id="MyCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-auto" src="../../assets/imagenes/playa_las_canteras.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="../../assets/imagenes/united-kingdom.png" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="../../assets/imagenes/gc.png" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev bg-black" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only"></span>
-  </a>
-  <a class="carousel-control-next bg-black" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only text"></span>
-  </a>
-</div>
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
-<div class="container">
-
-
-  <!-- START THE FEATURETTES -->
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-      <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-    </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-    </div>
+  <div id="imagen_div">
+      <img id="imagen_item" src="../../assets/imagenes/playa_las_canteras.jpg">
   </div>
 
-  <!-- /END THE FEATURETTES -->
 
-</div><!-- /.container -->
+  <div class="m-5">
+
+
+    <div id="titulo">
+      <img class="card mx-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
+      <a><img class="card mx-2" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
+      <h1 class="mx-3">Playa de las Canteras</h1>
+    </div>
+
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Header 2</h2>
+        <p class="lead">Texto</p>
+      </div>
+      <div class="col-md-5 bg-black" id="mapa">
+        <p class="text-white">mapa</p>
+      </div>
+    </div>
+
+  </div>
 
 </body>
-
-
-<script>
-  var myCarousel = document.getElementById('myCarousel');
-
-
-  var carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 200,
-    wrap: true,
-    touch: true
-  });
-
-
-  carousel.addEventListener('slide.bs.carousel', function () {
-    carousel.next();
-  })
-</script>
 
 
 </html>
