@@ -1,8 +1,8 @@
-#imagen_div{
+.carousel-inner{
   height: 480px;
 }
 
-#imagen_item{
+.imagen_item{
   height: 100%;
   width: 100%;
   object-fit: cover;

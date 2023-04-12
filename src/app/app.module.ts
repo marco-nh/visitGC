@@ -25,7 +25,6 @@ const appRoute:Routes=[
   {path:'sign_up', component:SignUpComponent},
   {path:'log_in', component:LogInComponent},
   {path:'lugar', component:LugarComponent},
-
   {path:'**', component:ErrorPersonalizadoComponent}
 ];
 
