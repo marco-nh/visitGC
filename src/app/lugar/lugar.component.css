@@ -1,9 +1,10 @@
 .carousel-inner{
-  height: 480px;
+  height: 380px;
 }
 
-.imagen_item{
-  height: 100%;
+
+.foto_item{
+  height: 380px;
   width: 100%;
   object-fit: cover;
 }

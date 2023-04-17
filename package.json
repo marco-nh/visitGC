@@ -21,7 +21,7 @@
     "@asymmetrik/ngx-leaflet": "^15.0.1",
     "@types/leaflet": "^1.9.3",
     "bootstrap": "5.2",
-    "leaflet": "^1.7.1",
+    "leaflet": "^1.9.3",
     "ng-bootstrap": "^1.6.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
