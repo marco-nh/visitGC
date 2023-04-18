@@ -14,6 +14,7 @@ interface Lugar{
 }
 
 
+
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
@@ -53,6 +54,7 @@ export class MapaComponent implements OnInit {
     const marcador = L.marker([lat, lng]).addTo(this.map);
     //marcador.nombreLugar = nombre;
     //marcador.descripcionLugar = descripcion;
+    let descripcionMapa = document.getElementById("ventanaDescripcion")!;
 
     //const divInfoLugar = document.getElementById('titulo_h2');
     //const divInfoDescripcion = document.getElementById('descripcionLugar');
@@ -63,7 +65,7 @@ export class MapaComponent implements OnInit {
       marcador.bindPopup(`<strong>${nombre}</strong><br>${descripcion}`).openPopup();
 
       //pasar descripcion al descripcion.component
-
+      descripcionMapa.style.display = 'block';
       this.informacion1 = `${descripcion}`;
       this.foto = `${foto}`;
       this.titulo = `${nombre}`;

@@ -16,7 +16,6 @@ import { LogInComponent } from './log-in/log-in.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { LugarComponent } from './lugar/lugar.component';
-import { ListadoLugaresComponent } from './listado-lugares/listado-lugares.component';
 
 
 const appRoute:Routes=[
@@ -43,8 +42,7 @@ const appRoute:Routes=[
     LogInComponent,
     ErrorPersonalizadoComponent,
     MapaComponent,
-    LugarComponent,
-    ListadoLugaresComponent
+    LugarComponent
   ],
   imports: [
     BrowserModule,
