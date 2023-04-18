@@ -1,15 +1,19 @@
 @media screen {
 
+  .item_list{
+    display: flex;
+  }
+
   .card_imagen{
-    width: 20%;
-    height: 20%;
+    width: 30%;
+    height: 30%;
   }
 
 }
 
 
 /*Tablet*/
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) and (min-width: 800px) {
 
   .card_imagen{
     width: 50%;
@@ -24,7 +28,7 @@
 @media screen and (max-width: 800px) {
 
   .item_list{
-
+    display: grid;
   }
 
 
@@ -34,8 +38,15 @@
     object-fit: cover;
   }
 
-  .card_titulo{
 
+  .card_contenedor{
+    display: flex;
+    align-items: center;
+
+  }
+
+  .card_titulo{
+    padding-left: 15px;
   }
 
   .card_descripcion{
