@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
-
 const appRoute:Routes=[
   {path:'', component:HomeComponent},
   {path:'planea_tu_viaje', component:PlaneaTuViajeComponent},
@@ -48,7 +47,7 @@ const appRoute:Routes=[
     ErrorPersonalizadoComponent,
     MapaComponent,
     LugarComponent,
-    ListadoLugaresComponent
+    ListadoLugaresComponent,
 
   ],
   imports: [

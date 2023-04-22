@@ -2,15 +2,15 @@
 
 <main class="form-signin w-100 m-auto">
   <div class="container w-25 py-3">
-    <form (submit)="onSubmit()" #loginForm="ngForm">
+    <form (ngSubmit)="login(logInForm)" #logInForm="ngForm">
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" [(ngModel)]="email"   name="email">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" ngModel name="email">
         <label for="floatingEmail">Correo Electronico</label>
       </div>
       
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="password" name="password">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" ngModel name="password">
         <label for="floatingPassword">Contraseña</label>
       </div>
       
@@ -20,7 +20,7 @@
           <input type="checkbox" value="remember-me"> Recordar contraseña
         </label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="logInForm.invalid">Iniciar sesión</button>
     </form>
   </div>
 

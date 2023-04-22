@@ -31,6 +31,7 @@ export class SignUpComponent {
 
     this.users.push(this.user);
     this.dataServide.guardarUsuarios(this.users);
+    this.dataServide.guardarCreedencialesUsuarios(this.user.email,this.user.password);
     console.log(this.user);
     this.user = {
       email: '',

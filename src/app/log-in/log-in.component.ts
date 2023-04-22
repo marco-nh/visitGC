@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { DataServices } from '../data.services';
+
 
 @Component({
   selector: 'app-log-in',
@@ -8,24 +9,20 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent {
-  email: string;
-  password:string;
+  constructor(private dataService: DataServices){}
 
-  constructor(private authService: AuthService){}
+ 
 
   ngOnInit(): void{
 
   }
 
-  onSubmit(){
-    
-    this.authService.iniciarSesion(this.email, this.password).then((result) =>{
-      if(result){
-        console.log('Se ha iniciado sesion');
-      }else{
-        console.log('Gol del Tenerife');
-      }
-    });
+  login(form:NgForm){
+     const email=form.value.email
+
+    const password=form.value.password
+
+    this.dataService.login(email, password);
   }
 
 
