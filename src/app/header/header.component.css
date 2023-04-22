@@ -17,3 +17,9 @@
 #contenedor{
   background-color: aqua;
 }
+#botonPerfil{
+  display: none;
+}
+#botonCerrarSesion{
+  display: none;
+}

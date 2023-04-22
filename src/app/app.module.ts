@@ -20,7 +20,8 @@ import {ListadoLugaresComponent} from "./listado-lugares/listado-lugares.compone
 import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const appRoute:Routes=[
   {path:'', component:HomeComponent},
@@ -29,6 +30,7 @@ const appRoute:Routes=[
   {path:'sign_up', component:SignUpComponent},
   {path:'log_in', component:LogInComponent},
   {path:'lugar', component:LugarComponent},
+  {path:'perfil', component:PerfilComponent},
   {path:'**', component:ErrorPersonalizadoComponent}
 ];
 
@@ -48,6 +50,7 @@ const appRoute:Routes=[
     MapaComponent,
     LugarComponent,
     ListadoLugaresComponent,
+    PerfilComponent,
 
   ],
   imports: [
@@ -56,6 +59,7 @@ const appRoute:Routes=[
     RouterModule.forRoot(appRoute),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DataServices],
   bootstrap: [AppComponent]

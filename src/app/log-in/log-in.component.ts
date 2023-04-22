@@ -11,7 +11,7 @@ import { DataServices } from '../data.services';
 export class LogInComponent {
   constructor(private dataService: DataServices){}
 
- 
+
 
   ngOnInit(): void{
 
@@ -23,6 +23,7 @@ export class LogInComponent {
     const password=form.value.password
 
     this.dataService.login(email, password);
+     console.log("iniciado");
   }
 
 

@@ -1,20 +1,30 @@
 <p>sign-up works!</p>
 
 <main class="form-signin w-100 m-auto">
-  <div class="container w-25 py-3">
+  <div class="container w-25 py-3" >
     <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" [(ngModel)]="user.email" name="email" required>
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" [(ngModel)]="user.email" name="email"
+               required>
         <label for="floatingEmail">Correo Electronico</label>
+      </div>
+      <div *ngIf="!correoValido" class="alert alert-danger mt-2" role="alert">
+        Correo no valido.
       </div>
       <div class="form-floating">
         <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" [(ngModel)]="user.nombre" name="nombre" required>
         <label for="floatingPassword">Nombre</label>
       </div>
+      <div *ngIf="!tamNombre" class="alert alert-danger mt-2" role="alert">
+        Tamaño de caracteres entre 2 y 20.
+      </div>
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required>
         <label for="floatingPassword">Contraseña</label>
+      </div>
+      <div *ngIf="!tamContra" class="alert alert-danger mt-2" role="alert">
+        Tamaño de caracteres entre 8 y 30.
       </div>
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar Contraseña" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
