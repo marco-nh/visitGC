@@ -17,6 +17,9 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
 import { MapaComponent } from './mapa/mapa.component';
 import { LugarComponent } from './lugar/lugar.component';
 import {ListadoLugaresComponent} from "./listado-lugares/listado-lugares.component";
+import { DataServices } from './data.services';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -46,13 +49,16 @@ const appRoute:Routes=[
     MapaComponent,
     LugarComponent,
     ListadoLugaresComponent
+
   ],
   imports: [
     BrowserModule,
     NgOptimizedImage,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [DataServices],
   bootstrap: [AppComponent]
 })
 

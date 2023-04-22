@@ -2,36 +2,39 @@
 
 <main class="form-signin w-100 m-auto">
   <div class="container w-25 py-3">
-    <form>
+    <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Correo Electronico</label>
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" [(ngModel)]="user.email" name="email" required>
+        <label for="floatingEmail">Correo Electronico</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" [(ngModel)]="user.nombre" name="nombre" required>
         <label for="floatingPassword">Nombre</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required>
         <label for="floatingPassword">Contraseña</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Repetir Contraseña</label>
+        <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar Contraseña" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+        <label for="floatingConfirmPassword">Repetir Contraseña</label>
+      </div>
+      <div *ngIf="!passwordsIguales" class="alert alert-danger mt-2" role="alert">
+        Las contraseñas no coinciden. Por favor, inténtalo de nuevo.
       </div>
 
       <div class="my-3"></div>
 
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Español</option>
-        <option value="1">Deutsch</option>
-        <option value="2">日本語</option>
+      <select class="form-select" [(ngModel)]="user.language" name="language" arial-label="Default select example">
+        <option selected value="Español">Español</option>
+        <option value="Aleman">Deutsch</option>
+        <option value="Anime">日本語</option>
       </select>
 
       <div class="my-3"></div>
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="signUpForm.invalid">Registrarse</button>
     </form>
   </div>
 
