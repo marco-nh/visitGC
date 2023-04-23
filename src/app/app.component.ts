@@ -7,13 +7,10 @@ import firebase from 'firebase/compat/app'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  usuario: string | null = "";
   title = 'visitGC';
   usuarioRegistrado: boolean = false;
   ngOnInit(): void {
-      firebase.initializeApp({
-        apiKey: "AIzaSyD29QRnOF1KFWHiNbzGozqOHV-Mu1YG0OY",
-        authDomain: "visitgc-e47ab.firebaseapp.com",
-      });
 
   }
 }

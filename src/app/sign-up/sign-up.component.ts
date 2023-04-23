@@ -61,7 +61,8 @@ export class SignUpComponent {
     this.users.push(this.user);
     this.dataService.guardarUsuarios(this.users);
     this.dataService.guardarCreedencialesUsuarios(this.user.email,this.user.password);
-    console.log(this.user);
+    this.dataService.actualizarPerfil(this.user.nombre);
+
     this.user = {
       email: '',
       nombre: '',
@@ -69,8 +70,6 @@ export class SignUpComponent {
       confirmPassword: '',
       language: '',
     };
-
-
   }
 }
 
