@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LoadScreenServiceService } from "./load-screen-service.service";
 
 @Component({
   selector: 'app-load-screen',
@@ -8,23 +9,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoadScreenComponent {
 
-  loading : boolean;
+  loading : boolean = true;
 
-  /*
-  constructor(private http:HttpClient) { }
-  umpires = [];
-  ngOnInit(): void {
-    this.http.get('../../assets/data.json').subscribe(
-      result => {
-        setTimeout(() => {
-          for (let key in result) {
-            if (result[key]) {
-              this.umpires.push(key);
-            }
-          }
-        }, 2000);
+  constructor(private loadScreenService : LoadScreenServiceService, private cdRef : ChangeDetectorRef) { }
 
-      }
-    )
-  }*/
+  ngOnInit(): void{
+    this.init();
+  }
+
+  init(){
+    this.loadScreenService.getLoadingObsarvable().subscribe((status) => {
+      this.loading = status === 'start';
+      this.cdRef.detectChanges();
+    });
+  }
+
 }
