@@ -8,7 +8,9 @@
         "informacion2": "Famosa por su faro y sus impresionantes dunas de arena.",
         "latitud": 27.735904,
         "longitud": -15.60021,
-        "foto": "https://www.visitarcanarias.com/Images/Playa-de-Maspalomas.jpg"
+        "foto1": "https://www.visitarcanarias.com/Images/Playa-de-Maspalomas.jpg",
+        "foto2": "https://cdn.getyourguide.com/img/location/5e5f74ebdec94.jpeg/68.jpg",
+        "foto3": "https://www.civitatis.com/f/espana/maspalomas/maspalomas.jpg"
       },
       {
         "id": 2,
@@ -18,7 +20,9 @@
         "informacion2": "Es una formación rocosa volcánica que ofrece impresionantes vistas panorámicas.",
         "latitud": 27.979348,
         "longitud": -15.664376,
-        "foto": "https://localguidegrancanaria.com/wp-content/uploads/Roque-nublo.jpg"
+        "foto1": "https://localguidegrancanaria.com/wp-content/uploads/Roque-nublo.jpg",
+        "foto2": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Roque_nublo.jpg",
+        "foto3": "https://lagavetavoladora.com/wp-content/uploads/2019/11/Sendero-al-Roque-Nublo.jpg"
       },
       {
         "id": 3,
@@ -28,7 +32,9 @@
         "informacion2": "Alberga la Catedral de Santa Ana y la Casa de Colón, un museo dedicado a Cristóbal Colón.",
         "latitud": 28.100075,
         "longitud": -15.413664,
-        "foto": "https://localguidegrancanaria.com/wp-content/uploads/Plaza-del-Pilar-Nuevo.jpg"
+        "foto1": "https://localguidegrancanaria.com/wp-content/uploads/Plaza-del-Pilar-Nuevo.jpg",
+        "foto2": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Columbus_House-Vegueta-Las_Palmas_Gran_Canaria.jpg",
+        "foto3": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/0b/2a/19/img20170421150214-largejpg.jpg?w=1200&h=1200&s=1"
       },
       {
         "id": 4,
@@ -38,7 +44,33 @@
         "informacion2": "Es un lugar ideal para probar el queso de cabra, el gofio y el vino de la isla.",
         "latitud": 28.102342,
         "longitud": -15.416057,
-        "foto": "https://cope-cdnmed.agilecontent.com/resources/jpg/0/4/1603405664940.jpg"
+        "foto1": "https://cope-cdnmed.agilecontent.com/resources/jpg/0/4/1603405664940.jpg",
+        "foto2":"https://www.grancanaria.com/blog/fileadmin/user_upload/Gran-Canaria-Pasillo-central-mercado-Vegueta.jpg",
+        "foto3": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Mercado_de_Vegueta.jpg"
+      },
+      {
+        "id":5,
+        "nombre": "Museo Elder de la Ciencia y la Tecnología",
+        "genero": "cultural",
+        "informacion1": "El Museo Elder de la Ciencia y la Tecnología es una institución para la divulgación científica inaugurada en 1999 en el Parque de Santa Catalina de Las Palmas de Gran Canaria",
+        "informacion2": "En sus instalaciones están presentes diferentes disciplinas como las Matemáticas, la Física, la Biología, la Informática, la Ingeniería, el Arte … convirtiéndolo en puente de comunicación con la ciudadanía, al transformar la ciencia en algo cercano, participativo y ameno para todos los públicos",
+        "latitud":28.14125, 
+        "longitud":-15.42967,
+        "foto1": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Museo_Elder_de_la_Ciencia_y_la_Tecnolog%C3%ADa.jpg",
+        "foto2": "https://www.barcelo.com/guia-turismo/wp-content/uploads/2019/12/gran-canaria-museo-elder-pal.jpg",
+        "foto3": "https://cd1.taquilla.com/data/images/t/76/museo-elder-de-la-ciencia-y-la-tecnologia.JPG"
+      },
+      {
+        "id":6,
+        "nombre":"Mogán",
+        "genero": "playas",
+        "informacion1": "Mogán es una localidad y municipio español perteneciente a la isla de Gran Canaria, en la provincia de Las Palmas, comunidad autónoma de Canarias",
+        "informacion2": "A partir de la década de los años 60 del siglo pasado, la primacía del sector primario en Mogán fue dejando paso a una potente industria turística, convirtiéndose hoy en el principal sector económico del municipio",
+        "latitud": 27.88468,
+        "longitud": -15.72208,
+        "foto1": "https://www.cardenas-grancanaria.com/perch/resources/gallery/puerto-de-mogan-puerto-4-w800h600.jpg",
+        "foto2": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/PdM2.jpg/266px-PdM2.jpg",
+        "foto3": "https://thewotme.com/wp-content/uploads/2022/07/Portada-que-ver-en-puerto-de-mogan-la-venecia-de-canarias.jpg"
       }
     ]
 }
