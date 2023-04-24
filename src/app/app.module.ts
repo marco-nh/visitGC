@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
+import { LoadScreenComponent } from './load-screen/load-screen.component';
 
 const appRoute:Routes=[
   {path:'', component:HomeComponent},
@@ -31,6 +32,7 @@ const appRoute:Routes=[
   {path:'log_in', component:LogInComponent},
   {path:'lugar', component:LugarComponent},
   {path:'perfil', component:PerfilComponent},
+  {path:'load_screen', component:LoadScreenComponent},
   {path:'**', component:ErrorPersonalizadoComponent}
 ];
 
@@ -51,6 +53,7 @@ const appRoute:Routes=[
     LugarComponent,
     ListadoLugaresComponent,
     PerfilComponent,
+    LoadScreenComponent,
 
   ],
   imports: [
