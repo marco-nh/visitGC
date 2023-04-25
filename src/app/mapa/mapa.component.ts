@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Router } from '@angular/router';
 
+
 interface Lugar{
   id: number,
   nombre: string,
@@ -10,7 +11,9 @@ interface Lugar{
   informacion2: string,
   latitud: number,
   longitud: number,
-  foto: string;
+  foto1: string,
+  foto2: string,
+  foto3: string
 }
 
 
@@ -24,16 +27,18 @@ export class MapaComponent implements OnInit {
   map!: L.Map;
   constructor(private router:Router){}
   informacion1: string = "";
-  foto: string = "";
+  foto1: string = "";
   titulo: string = "";
 
   async ngOnInit() {
    this.inicializarMapa();
-
+   //const lugaresFirebase=await this.dataServices.obtenerLugaresFirebase();
+   //console.log("lugaresFirebase-->" + lugaresFirebase);
    const lugares=await this.obtenerLugares();
+   console.log(lugares);
    if(lugares){
     lugares.forEach((lugar: Lugar) => {
-      this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1,lugar.foto);
+      this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1,lugar.foto1);
     });
    }
    //this.agregarMarcador();//Aqui faltan los parametros
@@ -67,7 +72,7 @@ export class MapaComponent implements OnInit {
       //pasar descripcion al descripcion.component
       descripcionMapa.style.display = 'block';
       this.informacion1 = `${descripcion}`;
-      this.foto = `${foto}`;
+      this.foto1 = `${foto}`;
       this.titulo = `${nombre}`;
     });
 
