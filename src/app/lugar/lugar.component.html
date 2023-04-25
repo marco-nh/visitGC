@@ -7,13 +7,13 @@
     <div id="carouselA" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../../assets/imagenes/playa_las_canteras.jpg" class="d-block w-100" alt="...">
+          <img src="{{datos?.foto1}}" class="d-block w-100 " alt="...">
         </div>
         <div class="carousel-item">
-          <img src="../../assets/imagenes/playa_las_canteras.jpg" class="d-block w-100" alt="...">
+          <img src="{{datos?.foto2}}" class="d-block w-100 " alt="...">
         </div>
         <div class="carousel-item">
-          <img src="../../assets/imagenes/playa_las_canteras.jpg" class="d-block w-100" alt="...">
+          <img src="{{datos?.foto3}}" class="d-block w-100 " alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselA" data-bs-slide="prev">
@@ -35,7 +35,7 @@
     <div id="titulo">
       <img class="card mx-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
       <a><img class="card mx-2" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
-      <h1 class="mx-3">Playa de las Canteras</h1>
+      <h1 class="mx-3">{{datos?.nombre}}</h1>
     </div>
 
 
@@ -43,8 +43,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Header 2</h2>
-        <p class="lead">Texto</p>
+        <h2 class="featurette-heading fw-normal lh-1">{{datos?.informacion1}}</h2>
+        <p class="lead">{{datos?.informacion2}}</p>
       </div>
       <div class="col-md-5 bg-black" id="mapa">
         <p class="text-white">mapa</p>

@@ -4,6 +4,7 @@ import {User} from "./user.model";
 import {Router} from "@angular/router";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth"
+import { Lugar } from "./lugar.model";
 
 @Injectable()
 export class DataServices{
@@ -23,6 +24,17 @@ export class DataServices{
 
     );
 
+  }
+
+  async obtenerLugares(){
+    const url='https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
+    try{
+      const datos = await this.httpClient.get(url).toPromise();
+      return datos;
+    }catch(error){
+      console.log("Error al obtener los datos de Firebase", error);
+      return [];
+    }
   }
 
   guardarCreedencialesUsuarios(email: string, password:string){
@@ -108,4 +120,19 @@ export class DataServices{
       // An error happened.
     });
   }
+
+  async buscarDatosLugar(lat: number, lon: number): Promise<Lugar | null> {
+    const datos = await this.obtenerLugares();
+    if (datos && Object.keys(datos).length > 0) {
+      const lugarEncontrado = Object.values(datos).find(
+        (lugar: Lugar | null) =>lugar && lugar.latitud == lat && lugar.longitud == lon
+      );
+      if (lugarEncontrado) {
+        
+        return lugarEncontrado;
+      }
+    }
+    return null;
+  }
+
 }

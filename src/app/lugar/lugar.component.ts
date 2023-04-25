@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute} from "@angular/router";
 import * as L from 'leaflet';
-
-
+import { Lugar } from '../lugar.model';
+import { DataServices } from '../data.services';
 @Component({
   selector: 'app-lugar',
   templateUrl: './lugar.component.html',
@@ -10,11 +10,12 @@ import * as L from 'leaflet';
 })
 export class LugarComponent implements OnInit{
 
-  constructor(private activateRoute:ActivatedRoute){}
+  constructor(private activateRoute:ActivatedRoute, private dataServices:DataServices){}
   map!: L.Map;
   lat: number;
   lon: number;
-  ngOnInit(){
+  datos: Lugar | undefined;
+  async ngOnInit(){
     this.activateRoute.queryParams
       .subscribe(params => {
           console.log(params);
@@ -23,7 +24,10 @@ export class LugarComponent implements OnInit{
         }
       );
     this.inicializarMapa(this.lat,this.lon);
-
+    this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon) 
+    || undefined;
+      
+    console.log(this.datos);
 
   }
 
@@ -43,4 +47,7 @@ export class LugarComponent implements OnInit{
     myFGMarker.addTo(this.map);
     this.map.fitBounds(myFGMarker.getBounds());
   }
+
+
+
 }
