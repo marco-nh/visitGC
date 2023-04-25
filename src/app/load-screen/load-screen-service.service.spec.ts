@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoadScreenServiceService } from './load-screen-service.service';
+import { LoadScreenServiceService } from '../load-screen-service.service';
 
 describe('LoadScreenServiceService', () => {
   let service: LoadScreenServiceService;
