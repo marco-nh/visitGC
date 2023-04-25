@@ -20,10 +20,17 @@ export class MapaComponent implements OnInit {
   informacion1: string = "";
   foto1: string = "";
   titulo: string = "";
+  lat:number;
+  lng:number;
+  
   marcadores: L.Marker[]=[];
+
+
   async ngOnInit() {
     this.inicializarMapa();
-  
+
+   
+
     const lugares=await this.dataService.obtenerLugares();
     console.log(lugares);
     //if(lugares){
@@ -31,9 +38,9 @@ export class MapaComponent implements OnInit {
       //this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1,lugar.foto1);
     //});
     //}
-   if (lugares) {
+    if (lugares) {
     Object.values(lugares).forEach((lugar: Lugar) => {
-      const marcador = this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1, lugar.genero);
+      const marcador = this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1, lugar.genero, lugar.latitud, lugar.longitud);
       this.marcadores.push(marcador);
     });
   }
@@ -49,11 +56,12 @@ export class MapaComponent implements OnInit {
     attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
     maxZoom: 18
     }).addTo(this.map);
+
   }
 
   
 
-  agregarMarcador(lat: number, lng: number, nombre: string, descripcion: string, foto: string, genero:string) {
+  agregarMarcador(lat: number, lng: number, nombre: string, descripcion: string, foto: string, genero:string, latitud:number, longitud:number) {
     const marcador = new marcadorCustom([lat, lng]).addTo(this.map);
     marcador.genero = genero;
     //marcador.descripcionLugar = descripcion;
@@ -69,6 +77,8 @@ export class MapaComponent implements OnInit {
       this.informacion1 = `${descripcion}`;
       this.foto1 = `${foto}`;
       this.titulo = `${nombre}`;
+      this.lat=latitud;
+      this.lng=longitud;
     });
 
     marcador.on('dbclick', () => {
@@ -87,9 +97,12 @@ export class MapaComponent implements OnInit {
       if(layer instanceof marcadorCustom){
         const marcador = layer as marcadorCustom;
         if(marcador.genero === genero){
-          marcador.addTo(this.map);
+          marcador.setOpacity(1);
         }else{
-          this.map.removeLayer(marcador);
+          marcador.setOpacity(0);
+          //marcador.off('click');
+          //marcador.off('dblclick');
+          marcador.off('mouseover');
         }
       }
     })

@@ -3,6 +3,7 @@ import { ActivatedRoute} from "@angular/router";
 import * as L from 'leaflet';
 import { Lugar } from '../lugar.model';
 import { DataServices } from '../data.services';
+
 @Component({
   selector: 'app-lugar',
   templateUrl: './lugar.component.html',

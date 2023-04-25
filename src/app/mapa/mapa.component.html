@@ -1,5 +1,5 @@
 <div id="wrapper">
-  <app-descripcion [descripcion]="informacion1" [fotoLugar]="foto1" [tituloLugar]="titulo" ></app-descripcion>
+  <app-descripcion [descripcion]="informacion1" [fotoLugar]="foto1" [tituloLugar]="titulo" [lat]="lat" [lon]="lng" ></app-descripcion>
   <div id="mapa"></div>
   <app-generos (generoSeleccionado)="onGeneroClick($event)"  id="generos" class="mx-2"></app-generos>
 </div>
