@@ -5,7 +5,9 @@ import { DataServices } from '../data.services';
 import { Lugar } from '../lugar.model';
 
 
-
+class marcadorCustom extends L.Marker{
+  genero: string;
+}
 
 @Component({
   selector: 'app-mapa',
@@ -18,7 +20,7 @@ export class MapaComponent implements OnInit {
   informacion1: string = "";
   foto1: string = "";
   titulo: string = "";
-
+  marcadores: L.Marker[]=[];
   async ngOnInit() {
     this.inicializarMapa();
   
@@ -31,7 +33,8 @@ export class MapaComponent implements OnInit {
     //}
    if (lugares) {
     Object.values(lugares).forEach((lugar: Lugar) => {
-      this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1);
+      const marcador = this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1, lugar.genero);
+      this.marcadores.push(marcador);
     });
   }
    
@@ -48,20 +51,19 @@ export class MapaComponent implements OnInit {
     }).addTo(this.map);
   }
 
-  agregarMarcador(lat: number, lng: number, nombre: string, descripcion: string, foto: string) {
-    const marcador = L.marker([lat, lng]).addTo(this.map);
-    //marcador.nombreLugar = nombre;
+  
+
+  agregarMarcador(lat: number, lng: number, nombre: string, descripcion: string, foto: string, genero:string) {
+    const marcador = new marcadorCustom([lat, lng]).addTo(this.map);
+    marcador.genero = genero;
     //marcador.descripcionLugar = descripcion;
     let descripcionMapa = document.getElementById("ventanaDescripcion")!;
-
-    //const divInfoLugar = document.getElementById('titulo_h2');
-    //const divInfoDescripcion = document.getElementById('descripcionLugar');
-
-
 
     marcador.on('mouseover', () => {
       marcador.bindPopup(`<strong>${nombre}</strong><br>${descripcion}`).openPopup();
 
+      //Añadimos el marcador al array de marcadores
+      
       //pasar descripcion al descripcion.component
       descripcionMapa.style.display = 'block';
       this.informacion1 = `${descripcion}`;
@@ -76,6 +78,21 @@ export class MapaComponent implements OnInit {
     marcador.on('click', () => {
       this.router.navigate(['/lugar'], { queryParams: { lat, lng } });
     });
+
+    return marcador;
+  }
+
+  onGeneroClick(genero:string){
+    this.map.eachLayer((layer) =>{
+      if(layer instanceof marcadorCustom){
+        const marcador = layer as marcadorCustom;
+        if(marcador.genero === genero){
+          marcador.addTo(this.map);
+        }else{
+          this.map.removeLayer(marcador);
+        }
+      }
+    })
   }
 
   //async obtenerLugares() {

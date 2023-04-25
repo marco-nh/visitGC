@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, EventEmitter, Output} from "@angular/core";
 
 @Component({
   selector: "app-generos",
@@ -7,5 +7,13 @@ import {Component} from "@angular/core";
 })
 
 export class GenerosComponent {
+
+  @Output() generoSeleccionado = new EventEmitter<string>();
+
+  constructor(){}
+
+  onGeneroClick(genero: string){
+    this.generoSeleccionado.emit(genero);
+  }
 
 }
