@@ -18,11 +18,14 @@ import { MapaComponent } from './mapa/mapa.component';
 import { LugarComponent } from './lugar/lugar.component';
 import {ListadoLugaresComponent} from "./listado-lugares/listado-lugares.component";
 import { DataServices } from './data.services';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { LoadScreenComponent } from './load-screen/load-screen.component';
+import { LoadScreenServiceService } from './load-screen-service.service';
+import {LoadingScreenInterceptorInterceptor} from "./loading-screen-interceptor.interceptor";
+
 
 const appRoute:Routes=[
   {path:'', component:HomeComponent},
@@ -64,7 +67,7 @@ const appRoute:Routes=[
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataServices],
+  providers: [DataServices, LoadScreenServiceService, { provide: HTTP_INTERCEPTORS, useClass: LoadingScreenInterceptorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 

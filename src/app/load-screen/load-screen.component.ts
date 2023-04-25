@@ -1,6 +1,6 @@
 import {ChangeDetectorRef, Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoadScreenServiceService } from "./load-screen-service.service";
+import { LoadScreenServiceService } from "../load-screen-service.service";
 
 @Component({
   selector: 'app-load-screen',
@@ -9,7 +9,7 @@ import { LoadScreenServiceService } from "./load-screen-service.service";
 })
 export class LoadScreenComponent {
 
-  loading : boolean = true;
+  loading : boolean = false;
 
   constructor(private loadScreenService : LoadScreenServiceService, private cdRef : ChangeDetectorRef) { }
 
