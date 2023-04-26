@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Lugar } from '../lugar.model';
 
 @Component({
   selector: 'app-listado-lugares',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./listado-lugares.component.css']
 })
 export class ListadoLugaresComponent {
-
+  @Input() lugar: Lugar;
 }

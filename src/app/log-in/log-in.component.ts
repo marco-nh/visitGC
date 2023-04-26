@@ -18,12 +18,14 @@ export class LogInComponent {
   }
 
   login(form:NgForm){
-     const email=form.value.email
+    const email=form.value.email
 
     const password=form.value.password
 
     this.dataService.login(email, password);
-     console.log("iniciado");
+    console.log("iniciado");
+    
+
   }
 
 

@@ -31,6 +31,7 @@ const appRoute:Routes=[
   {path:'', component:HomeComponent},
   {path:'planea_tu_viaje', component:PlaneaTuViajeComponent},
   {path:'buscador', component:BuscadorComponent},
+  {path: 'buscador/:termino', component: BuscadorComponent },
   {path:'sign_up', component:SignUpComponent},
   {path:'log_in', component:LogInComponent},
   {path:'lugar', component:LugarComponent},

@@ -2,6 +2,7 @@ import { Component,OnInit ,Input} from '@angular/core';
 import { DataServices } from '../data.services';
 import {user} from "@angular/fire/auth";
 import firebase from "firebase/compat/app";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +10,8 @@ import firebase from "firebase/compat/app";
 })
 export class HeaderComponent implements OnInit{
   @Input() usuarioPerfil: string | null;
-  constructor(private dataService: DataServices){}
+  palabraBusqueda='';
+  constructor(private dataService: DataServices, private route:Router){}
   ngOnInit(){
     const sesionIniciada = this.dataService.comprobarSesion();
     console.log(sesionIniciada);
@@ -30,5 +32,9 @@ export class HeaderComponent implements OnInit{
   }
   cerrarSesion(){
     this.dataService.cerrarSesion();
+  }
+
+  buscar(){
+    this.route.navigate(['/buscador', this.palabraBusqueda]);
   }
 }

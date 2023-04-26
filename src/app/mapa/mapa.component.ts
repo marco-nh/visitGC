@@ -22,7 +22,7 @@ export class MapaComponent implements OnInit {
   titulo: string = "";
   lat:number;
   lng:number;
-  
+
   marcadores: L.Marker[]=[];
 
 
@@ -92,7 +92,7 @@ export class MapaComponent implements OnInit {
     return marcador;
   }
 
-  onGeneroClick(genero:string){
+  onGeneroClick(genero:string) {
     this.map.eachLayer((layer) =>{
       if(layer instanceof marcadorCustom){
         const marcador = layer as marcadorCustom;

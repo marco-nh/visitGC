@@ -1,10 +1,10 @@
 <a href="#" class="list-group-item list-group-item-action gap-3 py-3 item_list container" aria-current="true">
-  <img class="card_imagen rounded-1" src="../../assets/imagenes/playa_las_canteras.jpg" alt="twbs">
+  <img class="card_imagen rounded-1" [src]="lugar.foto1" alt="twbs">
   <div class="d-flex gap-2 w-100 justify-content-between">
     <div class="card_contenedor">
       <img class="card card_genero" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
-      <h4 class="mb-0 card_titulo py-2">Playa de las Canteras</h4>
-      <p class="mb-0 opacity-75 card_descripcion py-1">Una de las playas más famosas de Gran Canaria...</p>
+      <h4 class="mb-0 card_titulo py-2">{{lugar.nombre}}</h4>
+      <p class="mb-0 opacity-75 card_descripcion py-1">{{lugar.informacion1}}</p>
     </div>
     <p class="opacity-50 text-nowrap">⭐</p>
   </div>

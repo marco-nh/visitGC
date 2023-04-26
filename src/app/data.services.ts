@@ -26,7 +26,7 @@ export class DataServices{
 
   }
 
-  async obtenerLugares(){
+  /*async obtenerLugares(){
     const url='https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
     try{
       const datos = await this.httpClient.get(url).toPromise();
@@ -35,7 +35,20 @@ export class DataServices{
       console.log("Error al obtener los datos de Firebase", error);
       return [];
     }
+  }*/
+  // tu-servicio.ts
+  
+async obtenerLugares(): Promise<Lugar[]> {
+  const url = 'https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
+  try {
+    const datos = await this.httpClient.get<Lugar[]>(url).toPromise();
+    return datos ? Object.values(datos) : [];
+  } catch (error) {
+    console.log("Error al obtener los datos de Firebase", error);
+    return [];
   }
+}
+
 
   guardarCreedencialesUsuarios(email: string, password:string){
     firebase

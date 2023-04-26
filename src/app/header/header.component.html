@@ -76,7 +76,7 @@
                     <img src="../assets/imagenes/lupa.png" height="32">
                    </span>
                 </a>
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
+              <input type="search" class="form-control" placeholder="Busca!" aria-label="Search" aria-describedby="basic-addon1" [(ngModel)]="palabraBusqueda" (keyup.enter)="buscar()">
             </div>
           </div>
       </div>

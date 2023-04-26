@@ -1,11 +1,11 @@
 <body>
 
-<h2 class="m-5">Resultados de la búsqueda de <input class="mx-3" type="text"> </h2>
+<h2 class="m-5">Resultados de la búsqueda de <input class="mx-3" type="text" [(ngModel)]="palabraBusqueda" (input)="filtrarLugares()"> </h2>
 
 
 <div class="d-flex flex-column flex-lg-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
   <div class="list-group">
-    <app-listado-lugares></app-listado-lugares>
+    <app-listado-lugares *ngFor="let lugar  of lugaresFiltrados" [lugar]="lugar"></app-listado-lugares>
   </div>
 </div>
 
