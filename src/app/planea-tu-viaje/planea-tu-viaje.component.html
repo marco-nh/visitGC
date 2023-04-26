@@ -1,22 +1,27 @@
 <body>
 
-<h2 class="m-5">Municipio: <input class="mx-3" type="text"> </h2>
+  <h2 class="m-5">Municipio:
+    <select class="mx-3 h-25">
+      <option value="" hidden="hidden" disabled selected>Selecciona un municipio</option>
+      <option *ngFor="let municipio of municipios">{{municipio}}</option>
+    </select>
+  </h2>
 
-<div id="contenedor">
+  <div id="contenedor">
 
-  <div class="mx-5 w-75 bg-black">
-    Mapa
-  </div>
-
-  <div class="d-flex flex-column flex-lg-row p-4 gap-4 py-md-5 mx-4">
-    <div class="list-group">
-      <app-listado-lugares></app-listado-lugares>
+    <div class="mx-5 w-75 bg-black">
+      Mapa
     </div>
+
+    <div class="d-flex flex-column flex-lg-row p-4 gap-4 py-md-5 mx-4">
+      <div class="list-group">
+        <app-listado-lugares></app-listado-lugares>
+      </div>
+    </div>
+
+
+
   </div>
-
-
-
-</div>
 
 
 </body>

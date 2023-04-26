@@ -29,10 +29,9 @@ export class MapaComponent implements OnInit {
   async ngOnInit() {
     this.inicializarMapa();
 
-   
+
 
     const lugares=await this.dataService.obtenerLugares();
-    console.log(lugares);
     //if(lugares){
     //lugares.forEach((lugar: Lugar) => {
       //this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1,lugar.foto1);
@@ -44,7 +43,7 @@ export class MapaComponent implements OnInit {
       this.marcadores.push(marcador);
     });
   }
-   
+
   }
 
   inicializarMapa(){
@@ -59,7 +58,7 @@ export class MapaComponent implements OnInit {
 
   }
 
-  
+
 
   agregarMarcador(lat: number, lng: number, nombre: string, descripcion: string, foto: string, genero:string, latitud:number, longitud:number) {
     const marcador = new marcadorCustom([lat, lng]).addTo(this.map);
@@ -71,7 +70,7 @@ export class MapaComponent implements OnInit {
       marcador.bindPopup(`<strong>${nombre}</strong><br>${descripcion}`).openPopup();
 
       //Añadimos el marcador al array de marcadores
-      
+
       //pasar descripcion al descripcion.component
       descripcionMapa.style.display = 'block';
       this.informacion1 = `${descripcion}`;

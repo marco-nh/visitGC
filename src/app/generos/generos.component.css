@@ -5,3 +5,13 @@
   border-radius: 7%;
   width: 75%;
 }
+
+.genero a{
+  text-decoration: none;
+}
+
+
+.genero a:hover{
+  color: yellow;
+  cursor: pointer;
+}

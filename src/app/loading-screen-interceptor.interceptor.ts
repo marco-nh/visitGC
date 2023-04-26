@@ -15,7 +15,6 @@ export class LoadingScreenInterceptorInterceptor implements HttpInterceptor {
   constructor(private loadScreenService : LoadScreenServiceService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("hoal");
     this.loadScreenService.loadingStarted();
     return next.handle(request).pipe(
       tap(
@@ -27,11 +26,9 @@ export class LoadingScreenInterceptorInterceptor implements HttpInterceptor {
         (error: HttpErrorResponse) => {
           this.loadScreenService.resetLoading();
           throw error;
-
         }
       ),
     );
-    //return this.handle({next: next, request: request});
   }
 
 

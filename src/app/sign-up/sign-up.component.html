@@ -1,6 +1,4 @@
-<p>sign-up works!</p>
-
-<main class="form-signin w-100 m-auto">
+<main class="form-signin w-100 py-5">
   <div class="container w-25 py-3" >
     <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
 
@@ -36,8 +34,9 @@
 
       <div class="my-3"></div>
 
-      <select class="form-select" [(ngModel)]="user.language" name="language" arial-label="Default select example">
-        <option selected value="Español">Español</option>
+      <select class="form-select" [(ngModel)]="user.language" name="language">
+        <option value="" hidden="hidden" disabled selected>Idioma</option>
+        <option value="Español">Español</option>
         <option value="Aleman">Deutsch</option>
         <option value="Anime">日本語</option>
       </select>

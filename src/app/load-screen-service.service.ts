@@ -17,7 +17,6 @@ export class LoadScreenServiceService {
   }
 
   loadingStarted(){
-    console.log(this.contador);
     if(++this.contador == 1){
       this.loading$.next('start');
     }

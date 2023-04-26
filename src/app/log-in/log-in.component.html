@@ -1,6 +1,4 @@
-<p>log-in works!</p>
-
-<main class="form-signin w-100 m-auto">
+<main class="form-signin w-100 py-5">
   <div class="container w-25 py-3">
     <form (ngSubmit)="login(logInForm)" #logInForm="ngForm">
 
@@ -8,12 +6,12 @@
         <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" ngModel name="email">
         <label for="floatingEmail">Correo Electronico</label>
       </div>
-      
+
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" ngModel name="password">
         <label for="floatingPassword">Contraseña</label>
       </div>
-      
+
 
       <div class="checkbox mb-3">
         <label>
