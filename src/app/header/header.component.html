@@ -72,11 +72,11 @@
 
             <div class="input-group mb-3 ">
                 <a class="input-group-append bg-white border-end-0">
-                  <span class="input-group-text bg-transparent ">
+                  <span id="lupa" class="input-group-text bg-transparent ">
                     <img src="../assets/imagenes/lupa.png" height="32" (click)="buscar()">
                    </span>
                 </a>
-              <input type="search" class="form-control" placeholder="Busca un  lugar..." aria-label="Search" aria-describedby="basic-addon1" [(ngModel)]="palabraBusqueda" (keyup.enter)="buscar()">
+              <input type="search" class="form-control" placeholder="Busca un lugar..." aria-label="Search" aria-describedby="basic-addon1" [(ngModel)]="palabraBusqueda" (keyup.enter)="buscar()">
             </div>
           </div>
       </div>

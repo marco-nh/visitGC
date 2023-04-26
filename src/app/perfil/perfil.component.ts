@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+
+  fotoPerfil: string;
+
   constructor(private dataService: DataServices, private router: Router){
   }
   /*todo conseguir la manera de actualizar el perfil, pero me da que hay que documentarse Firebase y
@@ -31,4 +34,9 @@ export class PerfilComponent {
     this.dataService.actualizarPerfil(inputValue);
     this.router.navigate(['/']);
   }
+
+  cambiarFoto(){
+
+  }
+
 }
