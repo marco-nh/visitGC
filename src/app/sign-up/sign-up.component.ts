@@ -17,7 +17,8 @@ export class SignUpComponent {
     nombre: '',
     password: '',
     confirmPassword: '',
-    language: ''
+    language: '',
+    lugaresFavoritos: ['']
   }
 
   users: User[]=[];
@@ -69,6 +70,7 @@ export class SignUpComponent {
       password: '',
       confirmPassword: '',
       language: '',
+      lugaresFavoritos: ['']
     };
   }
 }

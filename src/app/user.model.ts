@@ -4,4 +4,5 @@ export interface User {
     password: string;
     confirmPassword: string;
     language: string;
+    lugaresFavoritos: string[];
 }
