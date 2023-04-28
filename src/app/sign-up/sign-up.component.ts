@@ -18,7 +18,8 @@ export class SignUpComponent {
     password: '',
     confirmPassword: '',
     language: '',
-    lugaresFavoritos: ['']
+    lugaresFavoritos: [''],
+    imagenPerfil: ''
   }
 
   users: User[]=[];
@@ -70,7 +71,8 @@ export class SignUpComponent {
       password: '',
       confirmPassword: '',
       language: '',
-      lugaresFavoritos: ['']
+      lugaresFavoritos: [''],
+      imagenPerfil: ''
     };
   }
 }

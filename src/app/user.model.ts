@@ -5,4 +5,5 @@ export interface User {
     confirmPassword: string;
     language: string;
     lugaresFavoritos: string[];
+    imagenPerfil:string;
 }
