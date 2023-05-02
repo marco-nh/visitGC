@@ -1,4 +1,6 @@
-
+input[type="file"] {
+  display: none;
+}
 
 .editar_icon{
   cursor: pointer;

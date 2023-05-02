@@ -12,7 +12,6 @@ import {control} from "leaflet";
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
-  fotoPerfil: string;
   lugares: Lugar[] = [];
   lugaresFiltrados: Lugar[] = [];
   tamNombre: boolean = true;
@@ -58,7 +57,10 @@ export class PerfilComponent {
     window.location.reload();
   }
 
-  cambiarFoto(){
+  cambiarFoto(foto: any){
+    console.log(foto);
+
+    //this.user.imagenPerfil = foto;
 
   }
 
