@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Output, Component, OnInit, EventEmitter} from '@angular/core';
 import { User } from '../user.model';
 import { DataServices } from '../data.services';
 import {FormControl,FormGroup, FormsModule, Validators} from "@angular/forms";
@@ -8,7 +8,9 @@ import {FormControl,FormGroup, FormsModule, Validators} from "@angular/forms";
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent{
+
+  @Output() emailusuario = new EventEmitter<string>();
   constructor(private dataService: DataServices){
 
   }
@@ -28,6 +30,8 @@ export class SignUpComponent {
   tamNombre: boolean = true;
   tamContra: boolean = true;
   misContra: boolean = true;
+
+  /*todo comprobar que tambien el correo no haya sido registrado tambien*/
   onSubmit(){
     /* Control de tamaño y verificación de correos con FormControl*/
     const controlEmail = new FormControl(this.user.email,Validators.email)
@@ -64,7 +68,7 @@ export class SignUpComponent {
     this.dataService.guardarUsuarios(this.users);
     this.dataService.guardarCreedencialesUsuarios(this.user.email,this.user.password);
     this.dataService.actualizarPerfil(this.user.nombre);
-
+    this.emailusuario.emit(this.user.email);
     this.user = {
       email: '',
       nombre: '',

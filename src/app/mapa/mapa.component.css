@@ -12,6 +12,7 @@
 
 #mapa{
   grid-area: mapa;
+  height: 600px;
 }
 
 

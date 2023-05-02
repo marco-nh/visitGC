@@ -12,6 +12,8 @@ export class BuscadorComponent implements OnInit{
   lugares: Lugar[] = [];
   lugaresFiltrados: Lugar[] = [];
   palabraBusqueda='';
+
+
   constructor(private dataService:DataServices, private route:ActivatedRoute){}
 
   async ngOnInit(){

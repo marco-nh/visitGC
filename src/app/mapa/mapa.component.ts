@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import { Router } from '@angular/router';
 import { DataServices } from '../data.services';
@@ -23,12 +23,16 @@ export class MapaComponent implements OnInit {
   lat:number;
   lng:number;
 
+  @Input() marcarfavorito: (args: any) => void;
+
+  greenIcon = L.icon({
+    iconUrl: '/assets/imagenes/marker-icon-green.png',
+
+  });
+
   marcadores: L.Marker[]=[];
-
-
   async ngOnInit() {
     this.inicializarMapa();
-
 
 
     const lugares=await this.dataService.obtenerLugares();
@@ -96,12 +100,9 @@ export class MapaComponent implements OnInit {
       if(layer instanceof marcadorCustom){
         const marcador = layer as marcadorCustom;
         if(marcador.genero === genero){
-          marcador.setOpacity(1);
+          layer.setIcon(this.greenIcon);
         }else{
-          marcador.setOpacity(0);
-          //marcador.off('click');
-          //marcador.off('dblclick');
-          marcador.off('mouseover');
+          layer.setIcon(new L.Icon.Default());
         }
       }
     })

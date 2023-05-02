@@ -1,3 +1,4 @@
+import { Lugar } from './lugar.model';
 export interface User {
     email: string;
     nombre: string;
@@ -5,5 +6,5 @@ export interface User {
     confirmPassword: string;
     language: string;
     lugaresFavoritos: string[];
-    imagenPerfil:string;
+    imagenPerfil: string;
 }

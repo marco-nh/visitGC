@@ -1,24 +1,35 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-
+import{Subscription} from 'rxjs';
 import firebase from 'firebase/compat/app'
 import {LoadScreenServiceService} from "./load-screen-service.service";
+import {User} from "./user.model";
+import {SignUpComponent} from "./sign-up/sign-up.component";
+import {LogInComponent} from "./log-in/log-in.component";
+import {DataServices} from "./data.services";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  usuario: string | null = "";
-  title = 'visitGC';
-  usuarioRegistrado: boolean = false;
 
+  title = 'visitGC';
+  emailusuario: string[] = [];
+  suscription: Subscription;
   loading : boolean = false;
 
-  constructor(private loadScreenService : LoadScreenServiceService, private cdRef : ChangeDetectorRef) { }
+  constructor(private loadScreenService : LoadScreenServiceService, private cdRef : ChangeDetectorRef, private dataService: DataServices) { }
 
-
-  ngOnInit(): void {
+  async ngOnInit() {
     this.init();
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user);
+      } else {
+
+      }
+    });
+
   }
 
 
@@ -29,5 +40,7 @@ export class AppComponent implements OnInit {
       this.cdRef.detectChanges();
     });
   }
-
+  marcarFavorito(){
+      console.log("prueba");
+  }
 }

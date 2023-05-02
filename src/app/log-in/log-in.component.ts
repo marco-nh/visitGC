@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataServices } from '../data.services';
 
@@ -10,7 +10,7 @@ import { DataServices } from '../data.services';
 })
 export class LogInComponent {
   constructor(private dataService: DataServices){}
-
+  emailusuario = new EventEmitter<string>();
 
 
   ngOnInit(): void{
@@ -24,8 +24,8 @@ export class LogInComponent {
 
     this.dataService.login(email, password);
     console.log("iniciado");
-    
-
+    this.emailusuario.emit(email);
+    console.log(email);
   }
 
 

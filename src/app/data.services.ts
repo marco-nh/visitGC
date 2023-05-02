@@ -18,6 +18,7 @@ export class DataServices{
   }
   token:string;
   guardarUsuarios(usuarios:User[]){
+
     this.httpClient.put('https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json',usuarios).subscribe(
       response=>console.log("Se ha guardado el usuario: " + response),
       error=>console.log("Error: " + error),
@@ -37,7 +38,7 @@ export class DataServices{
     }
   }*/
   // tu-servicio.ts
-  
+
 async obtenerLugares(): Promise<Lugar[]> {
   const url = 'https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
   try {
@@ -49,6 +50,16 @@ async obtenerLugares(): Promise<Lugar[]> {
   }
 }
 
+  async obtenerDatosUsuario(): Promise<User[]> {
+    const url = 'https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json';
+    try {
+      const datos = await this.httpClient.get<User[]>(url).toPromise();
+      return datos ? Object.values(datos) : [];
+    } catch (error) {
+      console.log("Error al obtener los datos de Firebase", error);
+      return [];
+    }
+  }
 
   guardarCreedencialesUsuarios(email: string, password:string){
     firebase
@@ -141,11 +152,33 @@ async obtenerLugares(): Promise<Lugar[]> {
         (lugar: Lugar | null) =>lugar && lugar.latitud == lat && lugar.longitud == lon
       );
       if (lugarEncontrado) {
-        
+
         return lugarEncontrado;
       }
     }
     return null;
   }
 
+  /*esto se deberia de poner en otro sitio*/
+
+
+
+  async addLugarFavoritoUser(lugar: string){
+    const _this = this;
+    firebase.auth().onAuthStateChanged(async user => {
+      var userMod: User[] = [];
+      if (user) {
+        const datos = await this.obtenerDatosUsuario();
+        const usuario = Object.values(datos).find((user1: User) => user1);
+
+        if(usuario!.lugaresFavoritos.find((lug: string) => lugar == lug) == undefined){
+          usuario!.lugaresFavoritos.push(lugar);
+          userMod.push(usuario!);
+          this.guardarUsuarios(userMod);
+        }
+      } else {
+
+      }
+    });
+  }
 }

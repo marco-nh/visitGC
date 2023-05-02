@@ -6,15 +6,14 @@
 <body>
 
   <div class="card mx-5 my-2" id="ventanaDescripcion">
-
-    <img class="card-img" src={{fotoLugar}} alt="playa de las canteras">
+    <div class="fotoContainer"> <img class="card-img" src={{fotoLugar}} alt="playa de las canteras"></div>
 
     <div class="card-img-overlay">
       <img class="card my-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
-      <a><img class="card" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
+      <a><img class="card" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos" (click) = marcarFavorito();></a>
     </div>
 
-    <h2 class="card-title mx-2">{{tituloLugar}}</h2>
+    <h2 class="card-title mx-2" id="titulolugar">{{tituloLugar}}</h2>
 
     <div class="card-body">
       <p id="descripcionLugar">{{descripcion}}</p>
