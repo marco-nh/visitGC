@@ -24,7 +24,7 @@ export class SignUpComponent{
     imagenPerfil: ''
   }
 
-  users: User[]=[];
+  //users: User[]=[];
   passwordsIguales: boolean = true;
   correoValido: boolean = true;
   tamNombre: boolean = true;
@@ -32,7 +32,7 @@ export class SignUpComponent{
   misContra: boolean = true;
 
   /*todo comprobar que tambien el correo no haya sido registrado tambien*/
-  onSubmit(){
+  async onSubmit(){
     /* Control de tamaño y verificación de correos con FormControl*/
     const controlEmail = new FormControl(this.user.email,Validators.email)
 
@@ -62,10 +62,12 @@ export class SignUpComponent{
 
 
 
+    const usuariosExistentes=await this.dataService.obtenerUsuarios();
+    usuariosExistentes.push(this.user);
+    this.dataService.guardarUsuarios(usuariosExistentes);
 
-
-    this.users.push(this.user);
-    this.dataService.guardarUsuarios(this.users);
+    //this.users.push(this.user);
+    //this.dataService.guardarUsuarios(this.users);
     this.dataService.guardarCreedencialesUsuarios(this.user.email,this.user.password);
     this.dataService.actualizarPerfil(this.user.nombre);
     this.emailusuario.emit(this.user.email);

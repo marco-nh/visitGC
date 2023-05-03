@@ -27,6 +27,16 @@ export class DataServices{
 
   }
 
+  obtenerUsuarios(): Promise<User[]>{
+    return this.httpClient.get<User[]>('https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json')
+    .toPromise()
+    .then(response => response ? response : []) 
+    .catch(error => {
+      console.log("Error al obtener usuarios: " + error);
+      return [];  // Retorna un array vacío en caso de error.
+    });
+  }
+
   /*async obtenerLugares(){
     const url='https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
     try{
