@@ -27,16 +27,6 @@ export class DataServices{
 
   }
 
-  obtenerUsuarios(): Promise<User[]>{
-    return this.httpClient.get<User[]>('https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json')
-    .toPromise()
-    .then(response => response ? response : []) 
-    .catch(error => {
-      console.log("Error al obtener usuarios: " + error);
-      return [];  // Retorna un array vacío en caso de error.
-    });
-  }
-
   /*async obtenerLugares(){
     const url='https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
     try{
@@ -70,6 +60,12 @@ async obtenerLugares(): Promise<Lugar[]> {
       return [];
     }
   }
+
+  obtenerUsuarioRegistrado(datos: Promise<User[]>): User{
+    const usuario = Object.values(datos).find((user1: User) => user1);
+    return usuario;
+  }
+
 
   guardarCreedencialesUsuarios(email: string, password:string){
     firebase
@@ -174,17 +170,21 @@ async obtenerLugares(): Promise<Lugar[]> {
 
 
   async addLugarFavoritoUser(lugar: string){
-    const _this = this;
     firebase.auth().onAuthStateChanged(async user => {
-      var userMod: User[] = [];
       if (user) {
         const datos = await this.obtenerDatosUsuario();
-        const usuario = Object.values(datos).find((user1: User) => user1);
-
-        if(usuario!.lugaresFavoritos.find((lug: string) => lugar == lug) == undefined){
+        const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+        const indice = usuario!.lugaresFavoritos.indexOf(lugar);
+        if(usuario!.lugaresFavoritos.find((lug: string) => lugar == lug) == undefined) {
+          datos.splice(indice,1);
           usuario!.lugaresFavoritos.push(lugar);
-          userMod.push(usuario!);
-          this.guardarUsuarios(userMod);
+          datos.push(usuario!);
+          this.guardarUsuarios(datos);
+        } else {
+          datos.splice(indice,1);
+          usuario!.lugaresFavoritos.splice(indice,1);
+          datos.push(usuario!);
+          this.guardarUsuarios(datos);
         }
       } else {
 

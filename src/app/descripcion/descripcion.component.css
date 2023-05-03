@@ -1,5 +1,13 @@
 
-
+.card-img-overlay{
+  pointer-events:none;
+}
+#estrella{
+  pointer-events: auto;
+}
+#estrella:hover{
+  background-color: red;
+}
 #ventanaDescripcion{
   display:none;
 }
@@ -8,9 +16,4 @@
 .fotoContainer img{
   max-height: 100%;
   max-width: 100%;
-}
-
-
-#descripcionLugar{
-  height:50px;
 }

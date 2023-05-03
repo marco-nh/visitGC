@@ -61,8 +61,7 @@ export class SignUpComponent{
     }
 
 
-
-    const usuariosExistentes=await this.dataService.obtenerUsuarios();
+    const usuariosExistentes=await this.dataService.obtenerDatosUsuario();
     usuariosExistentes.push(this.user);
     this.dataService.guardarUsuarios(usuariosExistentes);
 

@@ -72,6 +72,8 @@ export class PerfilComponent {
       if (user) {
         const datos = await _this.dataService.obtenerDatosUsuario();
         const usuario = Object.values(datos).find((user1: User | null) => user1?.email == user.email);
+
+
         let lugarA: Lugar;
         usuario!.lugaresFavoritos.forEach(function(lug){
           if(lug != ""){

@@ -46,6 +46,7 @@ export class MapaComponent implements OnInit {
       const marcador = this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1, lugar.genero, lugar.latitud, lugar.longitud);
       this.marcadores.push(marcador);
     });
+
   }
 
   }
