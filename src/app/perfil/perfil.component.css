@@ -5,3 +5,32 @@ input[type="file"] {
 .editar_icon{
   cursor: pointer;
 }
+
+#contenedor_1{
+  display: flex;
+}
+
+
+
+/*Móvil*/
+@media screen and (max-width: 900px) {
+
+  #contenedor_1{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 85%;
+    grid-template-areas:
+      "informacion"
+      "lugares";
+  }
+
+  .informacionUsuario {
+    grid-area: informacion;
+  }
+
+  .listaLugaresFavoritos{
+    grid-area: lugares;
+  }
+
+}
+

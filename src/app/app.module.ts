@@ -25,6 +25,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { LoadScreenComponent } from './load-screen/load-screen.component';
 import { LoadScreenServiceService } from './load-screen-service.service';
 import {LoadingScreenInterceptorInterceptor} from "./loading-screen-interceptor.interceptor";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 const appRoute:Routes=[
@@ -66,7 +69,9 @@ const appRoute:Routes=[
     RouterModule.forRoot(appRoute),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [DataServices, LoadScreenServiceService, { provide: HTTP_INTERCEPTORS, useClass: LoadingScreenInterceptorInterceptor, multi: true }],
   bootstrap: [AppComponent]

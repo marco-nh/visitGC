@@ -6,6 +6,8 @@ import {Router} from "@angular/router";
 import {User} from "../user.model";
 import {FormControl, Validators} from "@angular/forms";
 import {control} from "leaflet";
+import {Storage, ref, uploadBytes, getBytes, getDownloadURL, listAll} from "@angular/fire/storage";
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -24,7 +26,10 @@ export class PerfilComponent {
     lugaresFavoritos: [''],
     imagenPerfil: ''
   }
-  constructor(private dataService: DataServices, private router: Router){
+
+  fotoPerfil: File;
+
+  constructor(private dataService: DataServices, private router: Router, private storage: Storage){
   }
   /*todo conseguir la manera de actualizar el perfil, pero me da que hay que documentarse Firebase y
   las promesas*/
@@ -39,7 +44,9 @@ export class PerfilComponent {
       }
     });
     await this.buscarLugaresFavoritos();
-    console.log("cargado");
+    await this.cargarFotoPerfil();
+    console.log(this.user.imagenPerfil);
+
   }
 
   cambiarPerfil(){
@@ -57,10 +64,47 @@ export class PerfilComponent {
     window.location.reload();
   }
 
-  cambiarFoto(foto: any){
-    console.log(foto);
+  async cargarFotoPerfil(){
+    firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const datos = await this.dataService.obtenerDatosUsuario();
+        let usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+        const imgRef = ref(this.storage, `perfil/${usuario?.email}`);
 
-    //this.user.imagenPerfil = foto;
+        const url = await getDownloadURL(imgRef);
+
+        usuario!.imagenPerfil = url;
+        this.user.imagenPerfil = url;
+
+        //actualizar foto perfil usuario en firebase
+
+        if (usuario != undefined) {
+          const indice = datos.indexOf(usuario);
+          datos.splice(indice, 1);
+          datos.push(usuario);
+          this.dataService.guardarUsuarios(datos);
+
+        }
+      }
+    });
+  }
+
+  async cambiarFoto($event: any){
+    const file = $event.target.files[0];
+    firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const datos = await this.dataService.obtenerDatosUsuario();
+        const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+        const imgRef = ref(this.storage, `perfil/${usuario?.email}`);
+
+        uploadBytes(imgRef, file)
+          .then(response => console.log(response))
+          .catch(error => console.log(error));
+
+        await this.cargarFotoPerfil();
+      }
+    });
+
 
   }
 

@@ -1,4 +1,4 @@
-<div class="container d-flex py-3 my-5">
+<div id="contenedor_1" class="container py-3 my-5">
   <div class="informacionUsuario">
     <h1 id="holaNombre">Hola,</h1>
     <div class="campos">
@@ -38,7 +38,7 @@
 
     </div>
     <div class="imagenUsuario py-4 text-center">
-      <img src="assets/imagenes/pejiño.png" class="imagenPerfil" width="100px">
+      <img [src]="user.imagenPerfil" class="imagenPerfil" width="100px">
       <h3 class="py-2">Foto de perfil</h3>
       <label class="modificar_foto_label btn btn-primary" for="subir_archivos">Modificar foto</label>
       <input id="subir_archivos" type="file" accept="image/*" (change)="cambiarFoto($event)">

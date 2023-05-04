@@ -5,16 +5,16 @@ import {Router} from "@angular/router";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth"
 import { Lugar } from "./lugar.model";
+import initializeApp = firebase.initializeApp;
+import {environment} from "../environments/environment";
+
 
 @Injectable()
 export class DataServices{
   private currentUser: firebase.User | null = null;
 
   constructor(private httpClient: HttpClient, private router: Router, ){
-    firebase.initializeApp({
-      apiKey: "AIzaSyD29QRnOF1KFWHiNbzGozqOHV-Mu1YG0OY",
-      authDomain: "visitgc-e47ab.firebaseapp.com",
-    });
+    initializeApp(environment.firebase);
   }
   token:string;
   guardarUsuarios(usuarios:User[]){
