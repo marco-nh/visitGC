@@ -1,3 +1,12 @@
+# VisitGC
+Página web turística de gran canaria hecha en Angular.
+
+## Administración de ficheros
+> documentos: archivos de especificaciones de la web.
+> src/app: donde se encuentran los componentes de nuestra web en Angular.
+> src/assets: donde están las imágenes y jsons de la web.
+
+
 # VisitGCAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
