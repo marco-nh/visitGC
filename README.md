@@ -2,9 +2,10 @@
 Página web turística de gran canaria hecha en Angular.
 
 ## Administración de ficheros
-* documentos: archivos de especificaciones de la web.
-* src/app: donde se encuentran los componentes de nuestra web en Angular.
-* src/assets: donde están las imágenes y jsons de la web.
+* documentos/*: archivos de especificaciones de la web.
+* src/app/*: donde se encuentran los componentes de nuestra web en Angular.
+* src/assets/*: donde están las imágenes y jsons de la web.
+* src/environments/*: donde está la configuración de la base de datos para sincronizar la web con firebase.
 
 
 # VisitGCAngular
