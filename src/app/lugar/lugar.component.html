@@ -33,8 +33,9 @@
 
 
     <div id="titulo">
-      <img class="card mx-2" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
-      <a><img class="card mx-2" src="../assets/imagenes/star.png" width="40px" alt="estrella_favoritos"></a>
+
+      <app-icono-generos class="mx-2"[generos]="datos!.genero"></app-icono-generos>
+      <app-estrella [tituloLugar]="datos!.nombre" [esFav]="esFav"></app-estrella>
       <h1 class="mx-3">{{datos?.nombre}}</h1>
     </div>
 

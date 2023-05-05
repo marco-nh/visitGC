@@ -3,6 +3,8 @@ import * as L from 'leaflet';
 import { Router } from '@angular/router';
 import { DataServices } from '../data.services';
 import { Lugar } from '../lugar.model';
+import firebase from "firebase/compat/app";
+import {User} from "../user.model";
 
 
 class marcadorCustom extends L.Marker{
@@ -22,6 +24,11 @@ export class MapaComponent implements OnInit {
   titulo: string = "";
   lat:number;
   lng:number;
+
+  genero:string = "";
+
+  esFav:boolean;
+  usuario: User | undefined;
 
   @Input() marcarfavorito: (args: any) => void;
 
@@ -45,6 +52,14 @@ export class MapaComponent implements OnInit {
     Object.values(lugares).forEach((lugar: Lugar) => {
       const marcador = this.agregarMarcador(lugar.latitud, lugar.longitud, lugar.nombre, lugar.informacion1, lugar.foto1, lugar.genero, lugar.latitud, lugar.longitud);
       this.marcadores.push(marcador);
+    });
+
+    const _this = this;
+    await firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const datos = await this.dataService.obtenerDatosUsuario();
+        _this.usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+      }
     });
 
   }
@@ -83,6 +98,14 @@ export class MapaComponent implements OnInit {
       this.titulo = `${nombre}`;
       this.lat=latitud;
       this.lng=longitud;
+      this.genero=genero;
+
+      if(this.usuario!.lugaresFavoritos.find((lug: string) => this.titulo == lug) == undefined) {
+        this.esFav = false;
+      } else {
+        this.esFav = true;
+      }
+      console.log(this.esFav);
     });
 
     marcador.on('dbclick', () => {

@@ -3,6 +3,8 @@ import { ActivatedRoute} from "@angular/router";
 import * as L from 'leaflet';
 import { Lugar } from '../lugar.model';
 import { DataServices } from '../data.services';
+import firebase from "firebase/compat/app";
+import {User} from "../user.model";
 
 @Component({
   selector: 'app-lugar',
@@ -16,6 +18,8 @@ export class LugarComponent implements OnInit{
   lat: number;
   lon: number;
   datos: Lugar | undefined;
+
+  esFav: boolean;
   async ngOnInit(){
     this.activateRoute.queryParams
       .subscribe(params => {
@@ -25,10 +29,23 @@ export class LugarComponent implements OnInit{
         }
       );
     this.inicializarMapa(this.lat,this.lon);
-    this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon) 
+    this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon)
     || undefined;
-      
+
     console.log(this.datos);
+
+
+    await firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const datos = await this.dataServices.obtenerDatosUsuario();
+        const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+        if(usuario!.lugaresFavoritos.find((lug: string) => this.datos?.nombre == lug) == undefined) {
+          this.esFav = false;
+        } else {
+          this.esFav = true;
+        }
+      }
+    });
 
   }
 

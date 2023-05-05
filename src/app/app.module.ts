@@ -28,6 +28,8 @@ import {LoadingScreenInterceptorInterceptor} from "./loading-screen-interceptor.
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { EstrellaComponent } from './estrella/estrella.component';
+import { IconoGenerosComponent } from './icono-generos/icono-generos.component';
 
 
 const appRoute:Routes=[
@@ -61,6 +63,8 @@ const appRoute:Routes=[
     ListadoLugaresComponent,
     PerfilComponent,
     LoadScreenComponent,
+    EstrellaComponent,
+    IconoGenerosComponent,
 
   ],
   imports: [

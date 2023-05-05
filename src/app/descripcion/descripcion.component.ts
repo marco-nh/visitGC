@@ -14,20 +14,32 @@ export class DescripcionComponent {
   @Input() descripcion:string;
   @Input() fotoLugar:string;
   @Input() tituloLugar:string;
+  @Input() generos:string;
   @Input() lat:number;
   @Input() lon:number;
+  @Input() esFav:boolean;
   lugares: Lugar[] = [];
 
   fotoEstrella: string = "../assets/imagenes/star.png";
 
   constructor(private router:Router, private dataService: DataServices) {
-
   }
   ngOnInit(){
+    if(this.esFav == true){
+      this.fotoEstrella = "../assets/imagenes/star_selected.png";
+    } else{
+      this.fotoEstrella = "../assets/imagenes/star.png";
+    }
   }
-  marcarFavorito(){
-    this.dataService.addLugarFavoritoUser(this.tituloLugar);
+  ngOnChanges(){
+    if(this.esFav == true){
+      this.fotoEstrella = "../assets/imagenes/star_selected.png";
+    } else{
+      this.fotoEstrella = "../assets/imagenes/star.png";
+    }
+    console.log(this.generos);
   }
+
   onSubmit(){
     this.router.navigate(['/lugar'], { queryParams: { lat:this.lat, lng:this.lon } });
   }

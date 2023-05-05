@@ -2,12 +2,7 @@
 .card-img-overlay{
   pointer-events:none;
 }
-#estrella{
-  pointer-events: auto;
-}
-#estrella:hover{
-  background-color: red;
-}
+
 #ventanaDescripcion{
   display:none;
 }
@@ -17,3 +12,4 @@
   max-height: 100%;
   max-width: 100%;
 }
+

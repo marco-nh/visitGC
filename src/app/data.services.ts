@@ -17,16 +17,18 @@ export class DataServices{
     initializeApp(environment.firebase);
   }
   token:string;
-  guardarUsuarios(usuarios:User[]){
+  async guardarUsuarios(usuarios:User[]){
+    await this.guardar(usuarios);
 
-    this.httpClient.put('https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json',usuarios).subscribe(
+  }
+
+  async guardar(usuarios:User[]){
+    await this.httpClient.put('https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/usuarios.json',usuarios).subscribe(
       response=>console.log("Se ha guardado el usuario: " + response),
       error=>console.log("Error: " + error),
 
     );
-
   }
-
   /*async obtenerLugares(){
     const url='https://visitgc-e47ab-default-rtdb.europe-west1.firebasedatabase.app/lugares.json';
     try{
@@ -61,13 +63,9 @@ async obtenerLugares(): Promise<Lugar[]> {
     }
   }
 
-  obtenerUsuarioRegistrado(datos: Promise<User[]>): User{
-    const usuario = Object.values(datos).find((user1: User) => user1);
-    return usuario;
-  }
 
 
-  guardarCreedencialesUsuarios(email: string, password:string){
+  async guardarCreedencialesUsuarios(email: string, password:string){
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -175,15 +173,17 @@ async obtenerLugares(): Promise<Lugar[]> {
         const datos = await this.obtenerDatosUsuario();
         const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
         const indice = usuario!.lugaresFavoritos.indexOf(lugar);
+        const indiceusuario = datos.indexOf(usuario!);
+        console.log(indiceusuario);
         if(usuario!.lugaresFavoritos.find((lug: string) => lugar == lug) == undefined) {
-          datos.splice(indice,1);
+          datos.splice(indiceusuario,1);
           usuario!.lugaresFavoritos.push(lugar);
-          datos.push(usuario!);
+          datos.splice(indiceusuario,0,usuario!);
           this.guardarUsuarios(datos);
         } else {
-          datos.splice(indice,1);
+          datos.splice(indiceusuario,1);
           usuario!.lugaresFavoritos.splice(indice,1);
-          datos.push(usuario!);
+          datos.splice(indiceusuario,0,usuario!);
           this.guardarUsuarios(datos);
         }
       } else {
@@ -191,4 +191,6 @@ async obtenerLugares(): Promise<Lugar[]> {
       }
     });
   }
+
+
 }

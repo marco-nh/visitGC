@@ -63,13 +63,13 @@ export class SignUpComponent{
 
     const usuariosExistentes=await this.dataService.obtenerDatosUsuario();
     usuariosExistentes.push(this.user);
-    this.dataService.guardarUsuarios(usuariosExistentes);
 
     //this.users.push(this.user);
     //this.dataService.guardarUsuarios(this.users);
-    this.dataService.guardarCreedencialesUsuarios(this.user.email,this.user.password);
-    this.dataService.actualizarPerfil(this.user.nombre);
-    this.emailusuario.emit(this.user.email);
+    await this.dataService.guardarCreedencialesUsuarios(this.user.email,this.user.password);
+    await this.dataService.actualizarPerfil(this.user.nombre);
+    await this.emailusuario.emit(this.user.email);
+    await this.dataService.guardarUsuarios(usuariosExistentes);
     this.user = {
       email: '',
       nombre: '',

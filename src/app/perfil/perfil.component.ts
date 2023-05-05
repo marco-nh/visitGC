@@ -81,9 +81,8 @@ export class PerfilComponent {
         if (usuario != undefined) {
           const indice = datos.indexOf(usuario);
           datos.splice(indice, 1);
-          datos.push(usuario);
+          datos.splice(indice,0,usuario!);
           this.dataService.guardarUsuarios(datos);
-
         }
       }
     });
@@ -91,23 +90,25 @@ export class PerfilComponent {
 
   async cambiarFoto($event: any){
     const file = $event.target.files[0];
-    firebase.auth().onAuthStateChanged(async user => {
+    await firebase.auth().onAuthStateChanged(async user => {
       if (user) {
         const datos = await this.dataService.obtenerDatosUsuario();
         const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
         const imgRef = ref(this.storage, `perfil/${usuario?.email}`);
 
-        uploadBytes(imgRef, file)
+        await uploadBytes(imgRef, file)
           .then(response => console.log(response))
           .catch(error => console.log(error));
 
         await this.cargarFotoPerfil();
+        await this.reload();
       }
     });
-
-
   }
 
+  async reload(){
+    await window.location.reload();
+  }
   async buscarLugaresFavoritos(): Promise<User | null>{
     this.lugares = await this.dataService.obtenerLugares();
     const _this = this;
