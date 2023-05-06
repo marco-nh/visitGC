@@ -105,7 +105,6 @@ export class MapaComponent implements OnInit {
       } else {
         this.esFav = true;
       }
-      console.log(this.esFav);
     });
 
     marcador.on('dbclick', () => {

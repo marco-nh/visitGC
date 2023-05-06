@@ -22,25 +22,14 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     this.init();
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user);
-      } else {
-
-      }
-    });
-
   }
 
 
   init(){
     this.loadScreenService.getLoadingObsarvable().subscribe((status) => {
-      console.log("hola");
       this.loading = status === 'start';
       this.cdRef.detectChanges();
     });
   }
-  marcarFavorito(){
-      console.log("prueba");
-  }
+
 }

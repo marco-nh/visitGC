@@ -24,6 +24,5 @@ export class EstrellaComponent {
   }
   marcarFavorito(){
     this.dataService.addLugarFavoritoUser(this.tituloLugar);
-    console.log(this.esFav);
   }
 }

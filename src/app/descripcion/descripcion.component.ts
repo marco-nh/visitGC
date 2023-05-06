@@ -37,7 +37,6 @@ export class DescripcionComponent {
     } else{
       this.fotoEstrella = "../assets/imagenes/star.png";
     }
-    console.log(this.generos);
   }
 
   onSubmit(){

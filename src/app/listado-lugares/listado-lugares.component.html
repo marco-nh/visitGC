@@ -2,7 +2,8 @@
   <img class="card_imagen rounded-1" [src]="lugar.foto1" alt="foto">
   <div class="d-flex gap-2 w-100 justify-content-between">
     <div class="card_contenedor">
-      <img class="card card_genero" src="../assets/imagenes/sun-umbrella.png" width="40px" alt="playa">
+      <app-icono-generos class="card_genero" [generos]="lugar.genero"></app-icono-generos>
+
       <h4 class="mb-0 card_titulo py-2">{{lugar.nombre}}</h4>
       <p class="mb-0 opacity-75 card_descripcion py-1">{{lugar.informacion1}}</p>
     </div>

@@ -71,7 +71,6 @@ async obtenerLugares(): Promise<Lugar[]> {
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Usuario creado exitosamente:", user);
         this.router.navigate(['/']);
       })
       .catch((error) => {
@@ -101,7 +100,6 @@ async obtenerLugares(): Promise<Lugar[]> {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        console.log(displayName);
         var profileUpdates = {
           displayName: displayName,
           photoURL: "https://ejemplo.com/imagen.jpg"
@@ -121,7 +119,6 @@ async obtenerLugares(): Promise<Lugar[]> {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
-        console.log("Usuario logeado")
 
         /* esto no va aqui*/
         document.getElementById("botonLogueo")!.style.display = "none";
@@ -131,7 +128,6 @@ async obtenerLugares(): Promise<Lugar[]> {
         return true;
       } else {
         // No user is signed in.
-        console.log("Usuario no logeado")
         document.getElementById("botonLogueo")!.style.display = "inline-block";
         document.getElementById("botonRegistro")!.style.display = "inline-block";
         document.getElementById("botonPerfil")!.style.display = "none";
@@ -174,7 +170,6 @@ async obtenerLugares(): Promise<Lugar[]> {
         const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
         const indice = usuario!.lugaresFavoritos.indexOf(lugar);
         const indiceusuario = datos.indexOf(usuario!);
-        console.log(indiceusuario);
         if(usuario!.lugaresFavoritos.find((lug: string) => lugar == lug) == undefined) {
           datos.splice(indiceusuario,1);
           usuario!.lugaresFavoritos.push(lugar);

@@ -14,8 +14,6 @@ export class HeaderComponent implements OnInit{
   constructor(private dataService: DataServices, private route:Router){}
   ngOnInit(){
     const sesionIniciada = this.dataService.comprobarSesion();
-    console.log(sesionIniciada);
-    console.log(this.usuarioPerfil);
     const user = firebase.auth().currentUser;
     if (user !== null) {
       // The user object has basic properties such as display name, email, etc.
