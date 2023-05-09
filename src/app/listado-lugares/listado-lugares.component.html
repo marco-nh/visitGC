@@ -1,0 +1,12 @@
+<ion-card (click)="onSubmit()" class="list-group-item list-group-item-action gap-3 py-3 item_list container" aria-current="true">
+  <ion-img class="card_imagen rounded-1" [src]="lugar.foto1" alt="foto"></ion-img>
+  <ion-card-content class="d-flex gap-2 w-100 justify-content-between">
+    <ion-item class="card_contenedor">
+      <app-icono-generos class="card_genero" [generos]="lugar.genero"></app-icono-generos>
+
+      <ion-card-title class="mb-0 card_titulo py-2">{{lugar.nombre}}</ion-card-title>
+      <p class="mb-0 opacity-75 card_descripcion py-1">{{lugar.informacion1}}</p>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+

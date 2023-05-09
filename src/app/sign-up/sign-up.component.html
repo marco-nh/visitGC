@@ -1,0 +1,49 @@
+  <ion-content class="container py-5">
+    <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+
+      <ion-item class="form-floating">
+        <ion-input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" [(ngModel)]="user.email" name="email"
+               required></ion-input>
+        <ion-label for="floatingEmail">Correo Electronico</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!correoValido" class="alert alert-danger mt-2" role="alert">
+        Correo no valido.
+      </ion-item>
+      <ion-item class="form-floating">
+        <ion-input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
+        <ion-label for="floatingPassword">Nombre</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!tamNombre" class="alert alert-danger mt-2" role="alert">
+        Tamaño de caracteres entre 2 y 20.
+      </ion-item>
+      <ion-item class="form-floating">
+        <ion-input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required></ion-input>
+        <ion-label for="floatingPassword">Contraseña</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!tamContra" class="alert alert-danger mt-2" role="alert">
+        Tamaño de caracteres entre 8 y 30.
+      </ion-item>
+      <ion-item class="form-floating">
+        <ion-input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar Contraseña" [(ngModel)]="user.confirmPassword" name="confirmPassword" required></ion-input>
+        <ion-label for="floatingConfirmPassword">Repetir Contraseña</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!passwordsIguales" class="alert alert-danger mt-2" role="alert">
+        Las contraseñas no coinciden. Por favor, inténtalo de nuevo.
+      </ion-item>
+
+      <ion-item class="my-3"></ion-item>
+
+      <ion-select class="form-select" [(ngModel)]="user.language" name="language">
+        <ion-select-option value="" hidden="hidden" disabled selected>Idioma</ion-select-option>
+        <ion-select-option value="Español">Español</ion-select-option>
+        <ion-select-option value="Aleman">Deutsch</ion-select-option>
+        <ion-select-option value="Anime">日本語</ion-select-option>
+      </ion-select>
+
+      <ion-item class="my-3"></ion-item>
+
+      <ion-button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="signUpForm.invalid">Registrarse</ion-button>
+    </form>
+  </ion-content>
+
+
