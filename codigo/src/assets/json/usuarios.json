@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+      {
+        "id": "1",
+        "nombre": "Juan Perez",
+        "correo": "juan.perez@example.com",
+        "contraseña": "contraseña1",
+        "idioma": "Inglés",
+        "rol": 2
+      },
+      {
+        "id": "2",
+        "nombre": "María Rodríguez",
+        "correo": "maria.rodriguez@example.com",
+        "contraseña": "contraseña2",
+        "idioma": "Español",
+        "rol": 2
+      },
+      {
+        "id": "3",
+        "nombre": "Carlos García",
+        "correo": "carlos.garcia@example.com",
+        "contraseña": "contraseña3",
+        "idioma": "Español",
+        "rol": 2
+      }
+    ]
+}
