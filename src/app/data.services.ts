@@ -115,23 +115,15 @@ async obtenerLugares(): Promise<Lugar[]> {
     });
   }
 
-  comprobarSesion(){
-    firebase.auth().onAuthStateChanged(function(user) {
+  async comprobarSesion(){
+    await firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
 
         /* esto no va aqui*/
-        document.getElementById("botonLogueo")!.style.display = "none";
-        document.getElementById("botonRegistro")!.style.display = "none";
-        document.getElementById("botonPerfil")!.style.display = "inline-block";
-        document.getElementById("botonCerrarSesion")!.style.display = "inline-block";
         return true;
       } else {
         // No user is signed in.
-        document.getElementById("botonLogueo")!.style.display = "inline-block";
-        document.getElementById("botonRegistro")!.style.display = "inline-block";
-        document.getElementById("botonPerfil")!.style.display = "none";
-        document.getElementById("botonCerrarSesion")!.style.display = "none";
         return false;
       }
     });

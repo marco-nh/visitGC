@@ -1,33 +1,39 @@
 
-<ion-content class="form-signin w-100 py-5">
-  <div class="container w-25 py-3">
-    <form (ngSubmit)="login(logInForm)" #logInForm="ngForm">
+<ion-content>
+  <ion-row class="ion-justify-content-center">
+    <ion-card id="containerL">
+      <form (ngSubmit)="login(logInForm)" #logInForm="ngForm">
 
-      <ion-item class="form-floating">
-        <ion-input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" ngModel name="email"></ion-input>
-        <ion-label position="floating">Correo Electronico</ion-label>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo Electronico</ion-label>
+          <ion-input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" ngModel name="email" fill="outline"></ion-input>
+        </ion-item>
 
-      <ion-item class="form-floating">
-        <ion-input type="password" class="form-control" id="floatingPassword" placeholder="Password" ngModel name="password"></ion-input>
-        <ion-label position="floating">Contraseña</ion-label>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password"  ngModel name="password"></ion-input>
+        </ion-item>
 
-      <ion-item class="checkbox mb-3">
-        <ion-label>
-          <ion-checkbox value="remember-me"></ion-checkbox> Recordar contraseña
-        </ion-label>
-      </ion-item>
+        <ion-item class="checkbox mb-3">
+          <ion-label>
+            <ion-checkbox value="remember-me"></ion-checkbox> Recordar contraseña
+          </ion-label>
+        </ion-item>
 
-      <ion-button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="logInForm.invalid">Iniciar sesión</ion-button>
+        <ion-button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="logInForm.invalid">Iniciar sesión</ion-button>
 
-    </form>
-  </div>
+      </form>
+    </ion-card>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-button href="/home">volver</ion-button>
+  </ion-row>
+
 </ion-content>
 
 
 
 
 
- 
+
 
