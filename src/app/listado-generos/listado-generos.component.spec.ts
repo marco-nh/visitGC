@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { IconoGenerosComponent } from './icono-generos.component';
+import { ListadoGenerosComponent } from './listado-generos.component';
 
-describe('IconoGenerosComponent', () => {
-  let component: IconoGenerosComponent;
-  let fixture: ComponentFixture<IconoGenerosComponent>;
+describe('ListadoGenerosComponent', () => {
+  let component: ListadoGenerosComponent;
+  let fixture: ComponentFixture<ListadoGenerosComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ IconoGenerosComponent ],
+      declarations: [ ListadoGenerosComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(IconoGenerosComponent);
+    fixture = TestBed.createComponent(ListadoGenerosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
