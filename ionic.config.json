@@ -1,0 +1,7 @@
+{
+  "name": "visitGC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
