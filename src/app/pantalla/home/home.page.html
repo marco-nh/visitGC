@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" class="ion-float-md-left">
+  <ion-header>
+    <ion-toolbar color="warning">
+      <ion-title size="large">visitGC</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button (click)="navegarRegistro()">Registro</ion-button>
+  <ion-button (click)="navegarLogin()">Login</ion-button>
+  <ion-button (click)="navegarPerfil()" id="usuarioPerfil">Perfil</ion-button>
+
+  <ion-content id="contenedorMapa">
+    <app-mapa></app-mapa>
+  </ion-content>
+  <ion-content id="contenedorGeneros">
+    <app-listado-generos></app-listado-generos>
+  </ion-content>
+
+
+
+</ion-content>

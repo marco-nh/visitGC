@@ -1,0 +1,23 @@
+.asideGenero{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.genero{
+  color: whitesmoke;
+  background-color: cornflowerblue;
+  font-size: x-large;
+  border-radius: 7%;
+  width: 15%;
+}
+
+.genero a{
+  text-decoration: none;
+}
+
+
+.genero a:hover{
+  color: yellow;
+  cursor: pointer;
+}
