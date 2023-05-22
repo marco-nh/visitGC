@@ -32,23 +32,21 @@
 
 #contenedor2{
   display: flex;
-  justify-content: center;
+
 }
 
 #contenedorMapa{
   display: flex;
-  justify-content: center;
-  height: 80%;
+  left: 5%;
+  height: 70%;
   width: 90%;
 }
 
 
 #contenedorGeneros{
   display: flex;
-  position: absolute;
   top: auto;
   left: 10%;
-  width: 75%;
   overflow-x: scroll;
   scrollbar-width: none;
 }

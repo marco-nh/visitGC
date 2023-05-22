@@ -112,22 +112,14 @@ export class MapaComponent  implements OnInit {
       }
     });
 
-
-    const queryParams: any = { lat, lng };
-
-    /*const urlTree = this.router.createUrlTree(['/lugar'], { queryParams });
-    const url = this.router.serializeUrl(urlTree);*/
-
-
-
     marcador.on('dbclick', () => {
       //window.history.replaceState({}, '', url + queryParams);
-      this.router.navigate(['/lugar'], queryParams);
+      this.router.navigate(['/lugar'], { queryParams : {lat, lng} });
     });
 
     marcador.on('click', () => {
       //.history.replaceState({}, '', url + queryParams);
-      this.router.navigate(['/lugar'], queryParams);
+      this.router.navigate(['/lugar'], { queryParams : {lat, lng} });
     });
 
     return marcador;

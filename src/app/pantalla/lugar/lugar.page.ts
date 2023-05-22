@@ -22,19 +22,16 @@ export class LugarPage implements OnInit{
 
   esFav: boolean = false;
   async ngOnInit(){
-    /*this.activateRoute.queryParams
+    this.activateRoute.queryParams
       .subscribe(params => {
-          console.log(params);
           this.lat = params['lat'];
           this.lon = params['lng'];
         }
       );
+
     this.inicializarMapa(this.lat,this.lon);
     this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon)
       || undefined;
-
-    console.log(this.datos);
-*/
 
     await firebase.auth().onAuthStateChanged(async user => {
       if (user) {
@@ -47,11 +44,28 @@ export class LugarPage implements OnInit{
         }
       }
     });
+  }
 
+  async ionViewWillEnter(){
+    /*this.inicializarMapa(this.lat,this.lon);
+    this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon)
+      || undefined;
+
+    await firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const datos = await this.dataServices.obtenerDatosUsuario();
+        const usuario = Object.values(datos).find((user1: User) => user1?.email == user.email);
+        if(usuario!.lugaresFavoritos.find((lug: string) => this.datos?.nombre == lug) == undefined) {
+          this.esFav = false;
+        } else {
+          this.esFav = true;
+        }
+      }
+    });*/
   }
 
   inicializarMapa(lat:number,lon: number){
-    this.map = L.map('mapa').setView([lat, lon], 10);
+    this.map = L.map('mapa2').setView([lat, lon], 10);
 
     //Agregar el mapa
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

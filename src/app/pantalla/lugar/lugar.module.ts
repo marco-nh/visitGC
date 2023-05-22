@@ -8,6 +8,7 @@ import { LugarPageRoutingModule } from './lugar-routing.module';
 
 import { LugarPage } from './lugar.page';
 import {BuscadorPageModule} from "../buscador/buscador.module";
+import {IconoGenerosComponent} from "../../icono-generos/icono-generos.component";
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import {BuscadorPageModule} from "../buscador/buscador.module";
     FormsModule,
     IonicModule,
     LugarPageRoutingModule,
-    BuscadorPageModule
+    BuscadorPageModule,
   ],
   declarations: [LugarPage]
 })

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="ion-float-md-left">
+<ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar color="warning">
       <ion-title size="large">visitGC</ion-title>
@@ -9,13 +9,11 @@
   <ion-button (click)="navegarLogin()">Login</ion-button>
   <ion-button (click)="navegarPerfil()" id="usuarioPerfil">Perfil</ion-button>
 
-  <ion-content id="contenedorMapa">
-    <app-mapa></app-mapa>
-  </ion-content>
-  <ion-content id="contenedorGeneros">
-    <app-listado-generos></app-listado-generos>
-  </ion-content>
-
-
+    <ion-content id="contenedorMapa">
+      <app-mapa></app-mapa>
+    </ion-content>
+    <div id="contenedorGeneros">
+      <app-listado-generos></app-listado-generos>
+    </div>
 
 </ion-content>

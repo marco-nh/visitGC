@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./pantalla/lugar/lugar.module').then(m => m.LugarPageModule)
   },
   {
-    path: 'lugar/:lat:lng',
+    path: 'lugar/:lat',
     loadChildren: () => import('./pantalla/lugar/lugar.module').then(m => m.LugarPageModule)
   },
 

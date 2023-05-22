@@ -1,15 +1,21 @@
 .asideGenero{
   display: flex;
-  justify-content: center;
+  position: absolute;
   flex-direction: row;
+  top: auto;
+  left: 12.5%;
+  width: 75%;
+  gap: 10px;
+  overflow-x: scroll;
 }
 
 .genero{
-  color: whitesmoke;
+  color: black;
   background-color: cornflowerblue;
   font-size: x-large;
   border-radius: 7%;
-  width: 15%;
+  width: 85%;
+  min-inline-size: fit-content;
 }
 
 .genero a{
@@ -20,4 +26,8 @@
 .genero a:hover{
   color: yellow;
   cursor: pointer;
+}
+
+.foto_genero{
+  width: 50%;
 }
