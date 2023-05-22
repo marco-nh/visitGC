@@ -14,8 +14,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroPageRoutingModule,
-    
+    RegistroPageRoutingModule
   ],
   declarations: [RegistroPage, SignUpComponent]
 })

@@ -3,17 +3,6 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true">
-
-  <ion-button (click)="navegarRegistro()">Registro</ion-button>
-  <ion-button (click)="navegarLogin()">Login</ion-button>
-  <ion-button (click)="navegarPerfil()" id="usuarioPerfil">Perfil</ion-button>
-
-    <ion-content id="contenedorMapa">
-      <app-mapa></app-mapa>
-    </ion-content>
-    <div id="contenedorGeneros">
-      <app-listado-generos></app-listado-generos>
-    </div>
-
+<ion-content [fullscreen]="true" id="contenedorMapa">
+  <app-mapa></app-mapa>
 </ion-content>

@@ -138,8 +138,5 @@ export class MapaComponent  implements OnInit {
     })
   }
 
-  navegarLugar(){
-    this.router.navigate(['/lugar']);
-  }
 
 }

@@ -13,12 +13,12 @@ import { ListadoLugaresComponent } from 'src/app/listado-lugares/listado-lugares
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BuscadorPageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        BuscadorPageRoutingModule
+    ],
   exports: [
     IconoGenerosComponent
   ],
