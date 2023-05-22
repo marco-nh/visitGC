@@ -9,6 +9,7 @@ import { LugarPageRoutingModule } from './lugar-routing.module';
 import { LugarPage } from './lugar.page';
 import {BuscadorPageModule} from "../buscador/buscador.module";
 import {IconoGenerosComponent} from "../../icono-generos/icono-generos.component";
+import {HeaderComponent} from "../../header/header.component";
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import {IconoGenerosComponent} from "../../icono-generos/icono-generos.component
     LugarPageRoutingModule,
     BuscadorPageModule,
   ],
-  declarations: [LugarPage]
+  exports: [
+    HeaderComponent
+  ],
+  declarations: [LugarPage, HeaderComponent]
 })
 export class LugarPageModule {}

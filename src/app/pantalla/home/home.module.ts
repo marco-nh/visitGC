@@ -8,15 +8,17 @@ import { HomePageRoutingModule } from './home-routing.module';
 import {MapaComponent} from "../../mapa/mapa.component";
 import {ListadoGenerosComponent} from "../../listado-generos/listado-generos.component";
 import {DescripcionComponent} from "../../descripcion/descripcion.component";
+import {LugarPageModule} from "../lugar/lugar.module";
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        LugarPageModule
+    ],
   declarations: [HomePage, MapaComponent, ListadoGenerosComponent, DescripcionComponent]
 })
 export class HomePageModule {}

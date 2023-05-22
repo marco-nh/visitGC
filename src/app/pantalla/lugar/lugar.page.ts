@@ -79,6 +79,13 @@ export class LugarPage implements OnInit{
     myFGMarker.addLayer(marker);
     myFGMarker.addTo(this.map);
     this.map.fitBounds(myFGMarker.getBounds());
+
+    this.map.whenReady(() => {
+          setTimeout(() => {
+            this.map.invalidateSize();
+          }, 1000);
+        }
+    );
   }
 
 
