@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IconoGenerosComponent  implements OnInit {
   @Input() generos:string='';
+
   constructor() { }
 
   ngOnInit() {}

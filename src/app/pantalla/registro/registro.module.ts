@@ -8,13 +8,15 @@ import { RegistroPageRoutingModule } from './registro-routing.module';
 
 import { RegistroPage } from './registro.page';
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroPageRoutingModule
+    RegistroPageRoutingModule,
+      SharedModule
   ],
   declarations: [RegistroPage, SignUpComponent]
 })

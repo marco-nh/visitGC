@@ -14,13 +14,15 @@ import {User} from "../../user.model";
 
 export class LugarPage implements OnInit{
 
-  constructor(private activateRoute:ActivatedRoute, private dataServices:DataServices){}
   map!: L.Map;
   lat: number = 0;
   lon: number = 0;
   datos: Lugar | undefined;
 
   esFav: boolean = false;
+
+  constructor(private activateRoute:ActivatedRoute, private dataServices:DataServices){}
+
   async ngOnInit(){
     this.activateRoute.queryParams
       .subscribe(params => {
@@ -46,8 +48,8 @@ export class LugarPage implements OnInit{
     });
   }
 
-  async ionViewWillEnter(){
-    /*this.inicializarMapa(this.lat,this.lon);
+  /*async ionViewWillEnter(){
+    this.inicializarMapa(this.lat,this.lon);
     this.datos = await this.dataServices.buscarDatosLugar(this.lat, this.lon)
       || undefined;
 
@@ -61,8 +63,8 @@ export class LugarPage implements OnInit{
           this.esFav = true;
         }
       }
-    });*/
-  }
+    });
+  }*/
 
   inicializarMapa(lat:number,lon: number){
     this.map = L.map('mapa2').setView([lat, lon], 10);

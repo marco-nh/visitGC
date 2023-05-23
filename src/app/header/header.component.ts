@@ -33,6 +33,10 @@ export class HeaderComponent  implements OnInit {
     });
   }
 
+  navegarHome(){
+    this.router.navigate(['/home']);
+  }
+
   navegarLogin(){
     this.router.navigate(['/login']);
   }

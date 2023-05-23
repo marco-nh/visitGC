@@ -8,7 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import {MapaComponent} from "../../mapa/mapa.component";
 import {ListadoGenerosComponent} from "../../listado-generos/listado-generos.component";
 import {DescripcionComponent} from "../../descripcion/descripcion.component";
-import {LugarPageModule} from "../lugar/lugar.module";
+import {SharedModule} from "../../shared/shared.module";
+
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import {LugarPageModule} from "../lugar/lugar.module";
         FormsModule,
         IonicModule,
         HomePageRoutingModule,
-        LugarPageModule
+        SharedModule
     ],
   declarations: [HomePage, MapaComponent, ListadoGenerosComponent, DescripcionComponent]
 })

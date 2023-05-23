@@ -7,10 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LugarPageRoutingModule } from './lugar-routing.module';
 
 import { LugarPage } from './lugar.page';
-import {BuscadorPageModule} from "../buscador/buscador.module";
-import {IconoGenerosComponent} from "../../icono-generos/icono-generos.component";
-import {HeaderComponent} from "../../header/header.component";
-import {EstrellaComponent} from "../../estrella/estrella.component";
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -18,11 +15,11 @@ import {EstrellaComponent} from "../../estrella/estrella.component";
     FormsModule,
     IonicModule,
     LugarPageRoutingModule,
-    BuscadorPageModule,
+    SharedModule
   ],
   exports: [
-    HeaderComponent
+
   ],
-    declarations: [LugarPage, HeaderComponent, EstrellaComponent]
+    declarations: [LugarPage]
 })
 export class LugarPageModule {}

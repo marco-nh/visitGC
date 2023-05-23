@@ -8,9 +8,8 @@ import { BuscadorPageRoutingModule } from './buscador-routing.module';
 
 import { BuscadorPage } from './buscador.page';
 
-import { IconoGenerosComponent } from 'src/app/icono-generos/icono-generos.component';
 import { ListadoLugaresComponent } from 'src/app/listado-lugares/listado-lugares.component';
-import {LugarPageModule} from "../lugar/lugar.module";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -19,11 +18,8 @@ import {LugarPageModule} from "../lugar/lugar.module";
         FormsModule,
         IonicModule,
         BuscadorPageRoutingModule,
-        LugarPageModule
+        SharedModule
     ],
-  exports: [
-    IconoGenerosComponent
-  ],
-  declarations: [BuscadorPage, IconoGenerosComponent, ListadoLugaresComponent]
+  declarations: [BuscadorPage, ListadoLugaresComponent]
 })
 export class BuscadorPageModule {}
