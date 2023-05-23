@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./pantalla/buscador/buscador.module').then( m => m.BuscadorPageModule)
   },
   {
+    path: 'buscador/:termino',
+    loadChildren: () => import('./pantalla/buscador/buscador.module').then( m => m.BuscadorPageModule)
+  },
+  {
     path: 'pagina-perfil',
     loadChildren: () => import('./pantalla/pagina-perfil/pagina-perfil.module').then(m => m.PaginaPerfilPageModule)
   },

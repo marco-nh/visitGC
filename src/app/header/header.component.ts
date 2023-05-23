@@ -48,8 +48,6 @@ export class HeaderComponent  implements OnInit {
   }
 
   buscar(){
-    console.log("Buscando...");
-    console.log(this.palabraBusqueda);
     this.router.navigate(['/buscador', this.palabraBusqueda]);
   }
 

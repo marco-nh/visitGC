@@ -10,6 +10,7 @@ import { BuscadorPage } from './buscador.page';
 
 import { IconoGenerosComponent } from 'src/app/icono-generos/icono-generos.component';
 import { ListadoLugaresComponent } from 'src/app/listado-lugares/listado-lugares.component';
+import {LugarPageModule} from "../lugar/lugar.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ListadoLugaresComponent } from 'src/app/listado-lugares/listado-lugares
         CommonModule,
         FormsModule,
         IonicModule,
-        BuscadorPageRoutingModule
+        BuscadorPageRoutingModule,
+        LugarPageModule
     ],
   exports: [
     IconoGenerosComponent
