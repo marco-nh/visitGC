@@ -1,7 +1,0 @@
-{
-  "name": "GC",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
