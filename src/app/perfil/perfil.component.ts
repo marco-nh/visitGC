@@ -4,7 +4,6 @@ import {User} from "../user.model";
 import {DataServices} from "../data.services";
 import { getAuth, updateEmail, updateProfile } from "firebase/auth";
 import {Router} from "@angular/router";
-import {DbLugaersService} from "../db-lugaers.service";
 
 @Component({
   selector: 'app-perfil',
@@ -14,7 +13,7 @@ import {DbLugaersService} from "../db-lugaers.service";
 export class PerfilComponent  implements OnInit {
   nombreUsuario: string = "";
   correoUsuario: string = "";
-  constructor(private router: Router, public dataService: DataServices, private db: DbLugaersService) { }
+  constructor(private router: Router, public dataService: DataServices) { }
 
   async ngOnInit() {
   }
@@ -78,10 +77,9 @@ export class PerfilComponent  implements OnInit {
     document.getElementById("cambioE")!.style.display = "flex";
     document.getElementById("botonguardar")!.style.display = "flex";
   }
-  navegarHome(){
+  acabarComponente(){
     document.getElementById("cambioN")!.style.display = "none";
     document.getElementById("cambioE")!.style.display = "none";
     document.getElementById("botonguardar")!.style.display = "none";
-    this.router.navigate(['/home']);
   }
 }

@@ -26,4 +26,7 @@ export class PaginaPerfilPage implements OnInit {
     //console.log(this.lug.getAllUsers());
     document.getElementById("botonLogin")!.style.display = "none";
   }
+  async ionViewDidLeave(){
+    this.perfil.acabarComponente();
+  }
 }
