@@ -15,7 +15,9 @@ export class ListadoLugaresComponent  implements OnInit {
   @Input() lugar!: Lugar;
   constructor(private router:Router, private dataService: DataServices){}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   onSubmit(){
     this.router.navigate(['/lugar'], { queryParams: { lat:this.lugar.latitud, lng:this.lugar.longitud } });

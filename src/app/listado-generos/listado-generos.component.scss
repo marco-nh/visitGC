@@ -1,0 +1,34 @@
+.asideGenero{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  top: auto;
+  left: 12.5%;
+  width: 75%;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.genero{
+  color: black;
+  background-color: cornflowerblue;
+  font-size: x-large;
+  border-radius: 7%;
+  width: 85%;
+  min-inline-size: fit-content;
+}
+
+.genero a{
+  text-decoration: none;
+}
+
+
+.genero a:hover{
+  color: yellow;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  #listaGenero{
+    flex-direction: column;
+  }
+}

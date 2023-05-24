@@ -1,3 +1,52 @@
-<p>
-  listado-generos works!
-</p>
+<div class="asideGenero py-4" id="listaGenero">
+
+  <div class="genero" (click)="onGeneroClick('playas')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/sun-umbrella.png" alt="playas"/>
+        Playas
+    </a>
+  </div>
+
+  <div class="genero" (click)="onGeneroClick('montaña')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/tree.png" alt="rural"/>
+        Montaña
+    </a>
+  </div>
+
+  <div class="genero" (click)="onGeneroClick('histórico')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/antique.png" alt="historico"/>
+        Histórico
+    </a>
+  </div>
+
+  <div class="genero" (click)="onGeneroClick('cultural')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/gc.png" alt="cultural"/>
+        Cultural
+    </a>
+  </div>
+
+  <div class="genero"(click)="onGeneroClick('ocio')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/champagne-glass.png" alt="ocio"/>
+        Ocio
+    </a>
+  </div>
+
+  <div class="genero"(click)="onGeneroClick('gastronómico')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class=" foto_genero me-2" width="40" height="40" src="../assets/imagenes/restaurant.png" alt="gastronomico"/>
+        Gastronómico
+    </a>
+  </div>
+
+  <div class="genero"(click)="onGeneroClick('rural')">
+    <a class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle rounded-pill">
+      <img class="foto_genero me-2" width="40" height="40" src="../assets/imagenes/pray.png" alt="religioso"/>
+        Religioso
+    </a>
+  </div>
+
+</div>

@@ -1,3 +1,9 @@
+<div class="my-5"></div>
 <ion-content>
   <app-perfil></app-perfil>
 </ion-content>
+
+<ion-list>
+  <app-listado-lugares *ngFor="let lugar of lugaresFiltrados" [lugar]="lugar"></app-listado-lugares>
+</ion-list>
+

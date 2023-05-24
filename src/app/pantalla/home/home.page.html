@@ -1,0 +1,19 @@
+<div class="my-5"></div>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>visitGC</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"><app-buscador-componente></app-buscador-componente></ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" id="inicio">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" [fullscreen]="true" id="contenedorMapa"> <app-mapa></app-mapa> </ion-content>
+</div>

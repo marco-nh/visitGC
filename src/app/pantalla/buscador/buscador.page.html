@@ -1,17 +1,18 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+
 <ion-content>
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title class="ion-text-center">
-        Resultados de la búsqueda de 
+      <ion-item class="">
+        Resultados de la búsqueda de:
         <ion-input class="mx-3" type="text" [(ngModel)]="palabraBusqueda" (ionInput)="filtrarLugares()"></ion-input>
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
+      </ion-item>
+
+
   <ion-list>
     <app-listado-lugares *ngFor="let lugar of lugaresFiltrados" [lugar]="lugar"></app-listado-lugares>
   </ion-list>
 
 </ion-content>
-  

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-listado-generos',
@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoGenerosComponent  implements OnInit {
 
-  constructor() { }
+  @Output() generoSeleccionado = new EventEmitter<string>();
+
+  constructor(){}
 
   ngOnInit() {}
 
+  onGeneroClick(genero: string){
+    this.generoSeleccionado.emit(genero);
+  }
+
 }
+

@@ -1,0 +1,53 @@
+<div class="my-5"></div>
+
+<ion-content>
+
+  <div id="imagen_div">
+    <div id="carouselA" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active"  data-bs-interval="5000">
+          <img src="{{datos?.foto1}}" class="d-block w-100 carousel_img" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="{{datos?.foto2}}" class="d-block w-100 carousel_img" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="{{datos?.foto3}}" class="d-block w-100 carousel_img" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselA" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselA" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+<div class="m-3">
+  <div id="titulo">
+    <app-icono-generos [generos]="gastronomico" class="mx-2"></app-icono-generos>
+    <!--app-icono-generos class="mx-2" [generos]=datos!.genero></app-icono-generos-->
+
+    <app-estrella></app-estrella>
+    <h1 class="mx-3">{{datos?.nombre}}</h1>
+
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">{{datos?.informacion1}}</h2>
+      <p class="lead">{{datos?.informacion2}}</p>
+    </div>
+    <div class="col-md-5 bg-black" id="mapa2">
+    </div>
+  </div>
+
+</div>
+
+</ion-content>

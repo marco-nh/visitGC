@@ -1,0 +1,30 @@
+#visitGC{
+  cursor: pointer;
+}
+
+
+.hipervinculos{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+
+
+
+#usuarioPerfil{
+  display: none;
+}
+
+#botonCerrarSesion{
+  display: none;
+}
+
+@media (max-width: 500px) {
+  #buscador{
+    display: none;
+  }
+}
+

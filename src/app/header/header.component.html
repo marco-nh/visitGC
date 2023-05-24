@@ -1,0 +1,50 @@
+<ion-toolbar>
+
+  <div class="desktopHeader d-flex">
+
+    <ion-title id="visitGC" (click)="navegarHome()">visitGC</ion-title>
+
+
+    <div class="hipervinculos">
+
+      <app-buscador-componente id="buscador"></app-buscador-componente>
+
+
+      <ion-buttons slot="secondary" id="botonLogin">
+        <ion-button fill="outline" (click)="navegarLogin()">
+          Login
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="secondary" id="botonRegistro">
+        <ion-button fill="outline" (click)="navegarRegistro()">
+          Registro
+        </ion-button>
+      </ion-buttons>
+
+
+      <ion-buttons slot="secondary">
+        <ion-button fill="outline" (click)="navegarPerfil()" id="usuarioPerfil">
+          <ion-icon slot="start" name="person-circle"></ion-icon>
+          Perfil
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="secondary">
+        <ion-button fill="outline" (click)="cerrarSesion()" id="botonCerrarSesion">
+          Cerrar sesión
+        </ion-button>
+      </ion-buttons>
+
+
+    </div>
+
+  </div>
+
+  <!--div class="movilHeader d-flex">
+    <img src="../../assets/imagenes/casita.png" width="40" height="40"/>
+    <ion-title size="large">visitGC</ion-title>
+    <ion-button class = "icon ion-home"></ion-button>
+  </div-->
+
+</ion-toolbar>

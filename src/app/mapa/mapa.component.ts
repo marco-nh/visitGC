@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../user.model";
 import {DataServices} from "../data.services";
-import {Router} from "@angular/router";
+import {NavigationExtras, Router} from "@angular/router";
 import {Lugar} from "../lugar.model";
 import firebase from "firebase/compat/app";
 import * as L from 'leaflet';
@@ -113,11 +113,13 @@ export class MapaComponent  implements OnInit {
     });
 
     marcador.on('dbclick', () => {
-      this.router.navigate(['/lugar'], { queryParams: { lat, lng } });
+      //window.history.replaceState({}, '', url + queryParams);
+      this.router.navigate(['/lugar'], { queryParams : {lat, lng} });
     });
 
     marcador.on('click', () => {
-      this.router.navigate(['/lugar'], { queryParams: { lat, lng } });
+      //.history.replaceState({}, '', url + queryParams);
+      this.router.navigate(['/lugar'], { queryParams : {lat, lng} });
     });
 
     return marcador;
@@ -135,5 +137,6 @@ export class MapaComponent  implements OnInit {
       }
     })
   }
+
 
 }

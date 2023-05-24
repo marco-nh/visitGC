@@ -6,9 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./icono-generos.component.scss'],
 })
 export class IconoGenerosComponent  implements OnInit {
-  @Input() generos:string=``;
-  constructor() { }
+  @Input() generos:string='';
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
 
 }

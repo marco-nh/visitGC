@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pantalla/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -25,10 +25,21 @@ const routes: Routes = [
     loadChildren: () => import('./pantalla/buscador/buscador.module').then( m => m.BuscadorPageModule)
   },
   {
+    path: 'buscador/:termino',
+    loadChildren: () => import('./pantalla/buscador/buscador.module').then( m => m.BuscadorPageModule)
+  },
+  {
     path: 'pagina-perfil',
     loadChildren: () => import('./pantalla/pagina-perfil/pagina-perfil.module').then(m => m.PaginaPerfilPageModule)
   },
-
+  {
+    path: 'lugar',
+    loadChildren: () => import('./pantalla/lugar/lugar.module').then(m => m.LugarPageModule)
+  },
+  {
+    path: 'lugar/:lat',
+    loadChildren: () => import('./pantalla/lugar/lugar.module').then(m => m.LugarPageModule)
+  },
 
 ];
 

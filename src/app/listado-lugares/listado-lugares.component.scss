@@ -1,0 +1,52 @@
+@media screen {
+
+  .tarjetas{
+    cursor: pointer;
+  }
+
+  #titulo{
+    display: inline-flex;
+  }
+
+  .item_list{
+    display: flex;
+  }
+
+  .card_imagen{
+    width: 30%;
+    height: 30%;
+  }
+
+}
+
+
+
+/*Móvil*/
+@media screen and (max-width: 900px) {
+
+  .item_list{
+    display: grid;
+  }
+
+
+  .card_imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .card_contenedor{
+    display: flex;
+    align-items: center;
+  }
+
+  .card_titulo{
+    padding-left: 15px;
+  }
+
+  .card_descripcion{
+    display: none;
+  }
+
+}

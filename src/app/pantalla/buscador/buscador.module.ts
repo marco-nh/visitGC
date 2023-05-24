@@ -8,17 +8,21 @@ import { BuscadorPageRoutingModule } from './buscador-routing.module';
 
 import { BuscadorPage } from './buscador.page';
 
-import { IconoGenerosComponent } from 'src/app/icono-generos/icono-generos.component';
 import { ListadoLugaresComponent } from 'src/app/listado-lugares/listado-lugares.component';
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BuscadorPageRoutingModule
-  ],
-  declarations: [BuscadorPage, IconoGenerosComponent, ListadoLugaresComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        BuscadorPageRoutingModule,
+        SharedModule
+    ],
+    exports: [
+        ListadoLugaresComponent,
+    ],
+  declarations: [BuscadorPage, ListadoLugaresComponent]
 })
 export class BuscadorPageModule {}
