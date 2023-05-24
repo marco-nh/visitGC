@@ -25,4 +25,9 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@import "~leaflet/dist/leaflet.css";
+@import '~leaflet/dist/leaflet.css';
+
+
+ion-toolbar {
+  --background: cornflowerblue;
+}
